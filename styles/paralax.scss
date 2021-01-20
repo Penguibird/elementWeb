@@ -1,0 +1,145 @@
+/* ------------------------------ paralax setup ----------------------------- */
+
+$perspective: 10px;
+@mixin paralax($distance) {
+    transform: translateZ($distance) scale((1 + (($distance * -1) / ($perspective))) + 0.05);
+}
+
+$paralax-section-height: 2117px; //! DIRTY
+
+.static-content {
+    position: relative;
+    top: $paralax-section-height;
+}
+
+.paralax {
+    perspective: $perspective;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    // background-image: url("../assets/background 1920.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.paralax-group {
+    // fix for mac or some shit like that
+    // margin-left: calc(100% - 100vw);
+    // margin-right: calc(100% - 100vw);
+    // padding-left: calc(100vw - 100%);
+    // padding-right: calc(100vw - 100%);
+
+    position: relative;
+    // height: $paralax-section-height;
+    transform-style: preserve-3d;
+}
+
+.paralax-layer {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    img {
+        position: absolute;
+    }
+}
+
+.paralax-background {
+    display: none;
+    @include paralax(-20px);
+    width: 100%;
+    height: $paralax-section-height;
+    //todo fix
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    img {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+/* -------------------------- positioning layers 3d ------------------------- */
+
+@media screen and (max-width: 900px) {
+}
+
+@media screen and (min-width: 901px) {
+    .paralax-mb-triangle {
+        @include paralax(-30px);
+    }
+
+    .paralax-small_blob_1 {
+        @include paralax(1px);
+    }
+
+    // #region main blob
+    $main-blob-base: -5px;
+    .paralax-mb_back_blob {
+        @include paralax($main-blob-base - 1px);
+    }
+    .paralax-mb_mid_blob_shadow {
+        @include paralax($main-blob-base + 2.3px);
+    }
+    .paralax-mb_mid_blob {
+        @include paralax($main-blob-base + 3px);
+    }
+    .paralax-mb_main_blob_shadow {
+        @include paralax($main-blob-base + 4.1px);
+    }
+    .paralax-mb_main_blob {
+        @include paralax($main-blob-base + 4.5px);
+    }
+    .paralax-mb_text {
+        @include paralax($main-blob-base + 4.7px);
+    }
+    .paralax-line_1 {
+        @include paralax($main-blob-base + 5.5px);
+    }
+    .paralax-line_2 {
+        @include paralax($main-blob-base + 5.5px);
+    }
+    //#endregion main blob
+
+    .paralax-b2_main {
+        @include paralax(-2px);
+    }
+    .paralax-b2_text {
+        @include paralax(-1.5px);
+    }
+    $b3-base: 1px;
+    .paralax-b3_main {
+        @include paralax($b3-base - 0px);
+    }
+    .paralax-b3_hexagon_shadow {
+        @include paralax($b3-base + 0.5px);
+    }
+    .paralax-b3_text {
+        @include paralax($b3-base + 0.8px);
+    }
+    .paralax-line_3 {
+        @include paralax($b3-base - 0.2px);
+    }
+    .paralax-small_blob_2 {
+        @include paralax(2.5px);
+    }
+    .paralax-small_blob_3 {
+        @include paralax(4px);
+    }
+    .paralax-small_blob_4 {
+        @include paralax(2.2px);
+    }
+    .paralax-small_blob_5 {
+        @include paralax(-3.5px);
+    }
+    .paralax-triangle_2 {
+        @include paralax(-2px);
+    }
+}

@@ -1,0 +1,116 @@
+@mixin positionLeft($left, $width) {
+    left: calc(#{(($left + ($width/2)) / 1920) * 100}% - #{$width * 1px / 2});
+    width: $width * 1px;
+}
+
+/* ------------------------------- positioning ------------------------------ */
+
+.rotated-triangle {
+    transform: rotateZ(-90deg) scaleX(-1);
+}
+@media screen and (max-width: 900px) {
+}
+
+@media screen and (min-width: 901px) {
+    // todo cutoff point 1400 for line and small blob positions
+    //todo move blob 2 and 3 lower
+    .mb-triangle {
+        top: 75px;
+        @include positionLeft(1011, 245);
+    }
+
+    .small_blob_1 {
+        top: 180px;
+        @include positionLeft(460, 120);
+    }
+
+    // #region main blob
+    .mb_back_blob {
+        top: 180px;
+        @include positionLeft(735, 518);
+    }
+    .mb_mid_blob_shadow {
+        top: 260px;
+        @include positionLeft(550, 688);
+    }
+    .mb_mid_blob {
+        top: 280px;
+        @include positionLeft(591, 688);
+    }
+    .mb_main_blob_shadow {
+        top: 257px;
+        @include positionLeft(537, 823);
+    }
+    .mb_main_blob {
+        top: 135px;
+        @include positionLeft(589, 809);
+    }
+    .line_1 {
+        top: 168px;
+        @include positionLeft(586, 260);
+    }
+    .line_2 {
+        top: 496px;
+        @include positionLeft(1260, 150);
+    }
+
+    .mb_text {
+        position: absolute;
+        top: 410px;
+        @include positionLeft(715, 518);
+    }
+    //#endregion main blob
+    .small_blob_2 {
+        top: 1302px;
+        @include positionLeft(308, 121);
+    }
+
+    .b2_main {
+        top: 1057px;
+        @include positionLeft(1177, 522);
+    }
+
+    .b2_text {
+        /* -------------------------------- text blob ------------------------------- */
+        position: absolute;
+        top: 1295px;
+        @include positionLeft(1280, 322);
+    }
+    // #region blob 3
+    .b3_main {
+        top: 1800px;
+        @include positionLeft(310, 502);
+    }
+    .b3_hexagon_shadow {
+        top: 1809px;
+        @include positionLeft(295, 493);
+    }
+    .b3_text {
+        /* -------------------------------- text blob ------------------------------- */
+        position: absolute;
+        top: 2080px;
+        @include positionLeft(364, 350);
+    }
+    .line_3 {
+        top: 1890px;
+        @include positionLeft(751, 108);
+    }
+    .triangle_2 {
+        top: 1830px;
+        @include positionLeft(343, 230);
+    }
+    .small_blob_4 {
+        top: 2288px;
+        @include positionLeft(595, 130);
+    }
+    // #endregion blob 3
+
+    .small_blob_3 {
+        top: 2123px;
+        @include positionLeft(1705, 102);
+    }
+    .small_blob_5 {
+        top: 1449px;
+        @include positionLeft(995, 227);
+    }
+}
