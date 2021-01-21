@@ -109,10 +109,10 @@ $paralax-section-height: 2117px; //! DIRTY
     //#endregion main blob
 
     .paralax-b2_main {
-        @include paralax(-2px);
+        @include paralax(2px);
     }
     .paralax-b2_text {
-        @include paralax(-1.5px);
+        @include paralax(2.5px);
     }
     $b3-base: 1px;
     .paralax-b3_main {
