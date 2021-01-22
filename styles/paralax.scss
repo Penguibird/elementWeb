@@ -114,7 +114,7 @@ $paralax-section-height: 2117px; //! DIRTY
     .paralax-b2_text {
         @include paralax(2.5px);
     }
-    $b3-base: 1px;
+    $b3-base: 4px;
     .paralax-b3_main {
         @include paralax($b3-base - 0px);
     }
@@ -134,12 +134,12 @@ $paralax-section-height: 2117px; //! DIRTY
         @include paralax(4px);
     }
     .paralax-small_blob_4 {
-        @include paralax(2.2px);
+        @include paralax($b3-base + 0.7px);
     }
     .paralax-small_blob_5 {
-        @include paralax(-3.5px);
+        @include paralax(-0.5px);
     }
     .paralax-triangle_2 {
-        @include paralax(-2px);
+        @include paralax(-4px);
     }
 }

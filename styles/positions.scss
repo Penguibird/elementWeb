@@ -19,6 +19,7 @@
         @include positionLeft(1011, 245);
     }
 
+    $scaling-factor-mb-1: 0.6;
     .small_blob_1 {
         top: 180px;
         @include positionLeft(460, 120);
@@ -65,43 +66,49 @@
         @include positionLeft(308, 121);
     }
 
+    $b2-offset: 0px;
     .b2_main {
-        top: 1057px;
+        top: 1057px + $b2-offset;
         @include positionLeft(1177, 522);
     }
 
     .b2_text {
         /* -------------------------------- text blob ------------------------------- */
         position: absolute;
-        top: 1295px;
+        top: 1295px + $b2-offset;
         @include positionLeft(1280, 322);
     }
     // #region blob 3
+    $b3-offset: 100px;
     .b3_main {
-        top: 1800px;
+        top: 1750px + $b3-offset;
         @include positionLeft(310, 502);
     }
     .b3_hexagon_shadow {
-        top: 1809px;
+        top: 1809px + $b3-offset;
         @include positionLeft(295, 493);
     }
     .b3_text {
         /* -------------------------------- text blob ------------------------------- */
         position: absolute;
-        top: 2080px;
+        top: 2080px + $b3-offset;
         @include positionLeft(364, 350);
     }
     .line_3 {
-        top: 1890px;
+        top: 1890px + $b3-offset;
         @include positionLeft(751, 108);
     }
     .triangle_2 {
-        top: 1830px;
+        top: 1400px;
         @include positionLeft(343, 230);
     }
     .small_blob_4 {
-        top: 2288px;
+
+/* ---------------------------------- marke --------------------------------- */
+
+        top: 2308px;
         @include positionLeft(595, 130);
+        //FIXME Blurry
     }
     // #endregion blob 3
 

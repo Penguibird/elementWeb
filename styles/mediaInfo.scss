@@ -1,0 +1,211 @@
+.media-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0;
+}
+.hexagon-controls {
+    max-width: 1200px;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    $width: 150px;
+    gap: 1.5em;
+    .hexagon-card {
+        height: $width * 0.86602540378;
+        width: $width;
+
+        background-image: url("../assets/hexagon_card.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain; //not done yet
+
+        //actual styling
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+
+        img {
+            height: 40%;
+            width: auto;
+        }
+        h3 {
+            font-size: 17px;
+            max-width: 70%;
+            height: 40%;
+            vertical-align: middle;
+        }
+    }
+}
+
+.carousel-control {
+    cursor: pointer;
+    &:hover {
+        filter: brightness(110%);
+    }
+    &:active {
+        filter: brightness(60%) !important;
+    }
+    &.selected {
+        filter: brightness(70%) !important;
+    }
+}
+//positioning them in the grid
+
+.carousel-slide-inner {
+    padding-left: 8em;
+    padding-right: 8em;
+    padding-top: 8em;
+    display: grid;
+    row-gap: 0.5em;
+    column-gap: 5em;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 50px 1fr 200px;
+    //FIXME
+
+    padding-bottom: 3em;
+
+    h2 {
+        &::first-letter {
+            text-transform: uppercase;
+        }
+    }
+    h2 {
+        grid-area: 1/1/2/2;
+        text-align: center;
+        padding-bottom: 2em;
+        text-transform: uppercase;
+        font-size: 45px;
+    }
+    h3 {
+        font-size: 25px;
+    }
+    p {
+        font-size: 19px !important; //FIXME Is overriden
+        line-height: 30px;
+    }
+    .main-text-wrapper {
+        grid-area: 2/1/3/2;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+
+        p {
+            padding-top: 1em;
+        }
+        h3 {
+            padding-top: 2em;
+        }
+        //FIXME VYCENTROVAT
+    }
+
+    .list {
+        grid-area: -2/1/-1/3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        gap: 0.5em;
+        h3 {
+            align-self: auto;
+        }
+    }
+
+    .list {
+        // grid-column: col2 / span 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: center;
+        gap: 0.5em;
+        p {
+            line-height: 25px;
+        }
+        /*ul {
+            padding-left: 1.5em;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 0.5em;
+            li {
+                scroll-margin-inline-start: 15px;
+            }
+            li::marker {
+                color: $deep-purple;
+                font-size: 20px;
+                margin-inline-end: -5px;
+            }
+        }*/
+        .bullet {
+            font-size: 25px;
+            font-family: sans-serif !important;
+            vertical-align: baseline;
+            position: relative;
+            top: 0.16em;
+        }
+    }
+}
+
+.portfolio-container {
+    grid-column: 2/3;
+    grid-row: 1 / span 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5em;
+
+    .portfolio-card {
+        background-color: #dedede;
+        border-radius: 3px; //FIXME
+        box-shadow: inset 5px 5px 8px 8px #8080806e;
+
+        display: grid;
+        grid-template-columns: 50px 5fr;
+        grid-template-rows: 1fr 2fr;
+        row-gap: 0.3em;
+        column-gap: 1em;
+        padding: 1em;
+
+        justify-items: end;
+
+        .image-wrapper {
+            grid-area: 1/1/3/2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5em;
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        .logo-koup_jas {
+            width: 60%;
+        }
+        .logo-nejci {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 1em;
+        }
+        .logo-title,
+        h3 {
+            grid-area: 1/2/2/3;
+            align-self: left;
+        }
+        p {
+            grid-area: 2/2/3/3;
+        }
+    }
+}

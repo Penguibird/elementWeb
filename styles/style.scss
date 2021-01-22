@@ -1,6 +1,9 @@
 @import "./paralax.scss";
 @import "./positions.scss";
 @import "./fontImport.scss";
+@import "./contact.scss";
+@import "./mediaInfo.scss";
+
 @import "../bootstrap/_carousel.scss";
 
 @media screen and (prefers-reduced-motion: reduce) {
@@ -36,6 +39,13 @@ main {
     // height: 2117px;
 }
 
+// TODO Proper card icons
+// TODO Proper card design
+// TODO color sections
+// TODO Finalize paralax
+// TODO Add more blobs
+// TODO Mobile design : Paralax, everything
+
 $text-shadow: 2.5px 2.5px 7px #5252525b;
 
 //* pallette
@@ -65,6 +75,25 @@ $orange: #fa705f;
     color: $orange !important;
 }
 
+h1,
+h2,
+h3,
+p,
+li {
+    font-family: "AntennaCond", sans-serif !important;
+    color: white;
+}
+
+.dark-text {
+    h1,
+    h2,
+    h3,
+    p,
+    li {
+        color: #4c4c4c;
+    }
+}
+
 .icon-deep-purple {
     filter: hue-rotate(35.4grad) saturate(6995.3%);
 }
@@ -74,7 +103,6 @@ $orange: #fa705f;
     h1,
     h2,
     p {
-        color: white;
         text-align: center;
         // letter-spacing: -1.5px;
         text-shadow: 4px 4px 8px rgba(51, 51, 51, 0.445);
@@ -118,65 +146,17 @@ $orange: #fa705f;
 }
 // #endregion
 
+/* ----------------------- Section main static content ---------------------- */
+
 .static-content {
-    // @include paralax(0px);
     position: absolute;
-    top: 2417px;
+    top: 2060px;
     width: 100%;
     // FIXME dont use hardcoded px
     // TODO make sure scrollings proper
 }
 
-.hexagon-background-text-parent {
-    p,
-    h2,
-    h1,
-    h3,
-    li {
-        font-family: "AntennaCond";
-    }
-    h1 {
-        font-size: 60px;
-        color: $light-blue;
-        text-align: center;
-        text-shadow: $text-shadow;
-        font-weight: 500; //900 //? what width
-        padding-bottom: 1em;
-    }
-    h2,
-    h3 {
-        font-weight: 700;
-        font-size: 30px;
-        // text-align: center;
-        // color: #5f5f5f;
-        color: $light-blue;
-    }
-    p,
-    li {
-        // text-align: justify;
-        // color: #4c4c4c;
-        color: white;
-        font-size: 20px;
-    }
-    li {
-        color: $deep-purple;
-        &::marker {
-            color: $deep-purple;
-        }
-    }
-    strong {
-        font-weight: 700;
-        color: $light-blue;
-    }
-}
 
-.section-main-text {
-    h1 {
-        max-width: 1200px; //FIXME
-        margin-left: 500px;
-        margin-top: -200px;
-    }
-}
 
 .section-main-text,
 .hexagon-background {
@@ -205,503 +185,35 @@ $orange: #fa705f;
             padding-top: 0.8em;
         }
 
+        h1 {
+            font-size: 60px;
+            text-align: center;
+            text-shadow: $text-shadow;
+            font-weight: 500; //900
+            padding-bottom: 1em;
+            color: $light-blue; //?
+
+            max-width: 1200px; //FIXME
+            margin-left: 500px;
+            margin-top: -200px;
+        }
+        p.first {
+            grid-column: 1/4;
+            margin-top: -40px;
+            margin-left: 650px;
+            max-width: 80ch;
+        }
+        h2 {
+            color: $light-blue; //?
+        }
         h2,
         p {
             grid-column: 2/3;
+            font-size: 20px;
+            line-height: 30px;
         }
         h1 {
             grid-column: 1/4;
         }
-    }
-}
-
-/* ------------------------ section with hexagoncards ----------------------- */
-
-.hexagon-cards {
-    padding: 5em;
-}
-
-.hexagon-cards-section {
-    // placeholder
-    background-color: rgb(84, 84, 84);
-    height: 500px;
-}
-
-.hexagon-cards-wrapper {
-    margin-left: 30em; //width of the navbar
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    gap: 0;
-}
-
-// #region positioning hexagons appart
-@mixin hexagon-card-container($wWidth, $gutter, $offset, $rowNum, $colNum) {
-    $hexagon-card-width: $wWidth;
-    $hexagon-card-height: $hexagon-card-width * 0.86602540378;
-
-    $hexagon-card-gutter: $gutter;
-    $hexagon-card-gutter-offset: ($hexagon-card-height/2) - ($hexagon-card-gutter * 0.5);
-
-    $hexagon-card-gutter-horizontal: $hexagon-card-gutter/0.86602540378;
-    $hexagon-card-feelgood-offset: $offset;
-
-    padding-top: $hexagon-card-gutter;
-    display: grid;
-
-    // gap: 2em;
-
-    $rows: null;
-    @for $i from 0 through $rowNum {
-        $rows: $rows + #{" " + $hexagon-card-gutter-offset + " " + $hexagon-card-gutter};
-    }
-    grid-template-rows: $rows;
-
-    $columns: null;
-    @for $i from 0 through $colNum {
-        $columns: $columns +
-            #{" "+
-            (($hexagon-card-width/4) - $hexagon-card-gutter-horizontal) +
-            " " +
-            (($hexagon-card-width/2) + 2 * $hexagon-card-gutter-horizontal + $hexagon-card-feelgood-offset)};
-    }
-    $columns: $columns + #{" "+ (($hexagon-card-width/4) - $hexagon-card-gutter-horizontal)};
-    // " "
-    // (($hexagon-card-width/4) - $hexagon-card-gutter-horizontal)
-    grid-template-columns: $columns;
-
-    .hexagon-card {
-        width: $hexagon-card-width;
-        height: $hexagon-card-height;
-    }
-}
-
-// #endregion
-
-.hexagon-controls {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    // gap: 1.5em;
-}
-.hexagon-cards-container-controls {
-    @include hexagon-card-container(130px, 20px, -3px, 2, 5);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    gap: 1.5em;
-    //#region unused grid positioning
-    // .hexagon-card {
-    //     &:nth-child(1) {
-    //         grid-area: 1/1/4/4;
-    //     }
-    //     &:nth-child(2) {
-    //         grid-area: 3/3/6/6;
-    //     }
-    //     &:nth-child(3) {
-    //         grid-area: 1/5/4/8;
-    //     }
-    //     &:nth-child(4) {
-    //         grid-area: 3/7/6/10;
-    //     }
-    //     &:nth-child(5) {
-    //         grid-area: 1/9/4/12;
-    //     }
-    //     &:nth-child(6) {
-    //         grid-area: 3/11/6/14;
-    //     }
-    // }
-    // #endregion
-}
-
-.carousel-control {
-    cursor: pointer;
-    &:hover {
-        filter: brightness(110%);
-    }
-    &:active {
-        filter: brightness(60%) !important;
-    }
-    &.selected {
-        filter: brightness(70%) !important;
-    }
-}
-//positioning them in the grid
-.hexagon-card {
-    // spaces: 1/4, 3/6, 5/8 etc
-
-    background-image: url("../assets/hexagon_card.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain; //not done yet
-
-    //actual styling
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: stretch;
-    h3,
-    p {
-        color: #4c4c4c;
-        font-family: "AntennaCond", sans-serif !important;
-        font-size: 14px;
-        line-height: 25px;
-    }
-
-    img {
-        flex-grow: 1;
-        flex-shrink: 1;
-        width: auto;
-    }
-    h3 {
-        flex-grow: 1;
-        flex-shrink: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        gap: 0;
-        font-size: 17px;
-        max-width: 70%;
-    }
-    //#region text-clipping
-    .text-clipper {
-        flex-grow: 1;
-        flex-shrink: 1;
-        p {
-            display: inline;
-            text-align: justify;
-        }
-    }
-    div.before {
-        float: left;
-        height: 100%;
-        width: 50%;
-        shape-outside: polygon(0px 0px, 0% 100%, 50% 100%);
-        shape-margin: 3%;
-        display: inline;
-    }
-    div.after {
-        float: right;
-        height: 100%;
-        width: 50%;
-        shape-outside: polygon(100% 0%, 100% 100%, 50% 100%);
-        // shape-margin: 3%;
-        //? TEST THIS
-    }
-    // #endregion
-    // #region border
-    // hr {
-    //     $border-height: 4px;
-    //     width: 0.8 * $hexagon-card-width;
-    //     height: $border-height;
-    //     background-color: $deep-purple;
-    //     border: none;
-    //     border-radius: $border-height * 0.5;
-    //     margin-block-start: 0;
-    //     margin-block-end: 0;
-    //     margin-top: -15px; //FIXME somehow position this correctly
-    //     margin-bottom: 0.5em;
-    // }
-    // #endregion unused
-}
-
-.vl {
-    display: none;
-    //FIXME
-}
-
-.carousel-slide-inner {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-
-    // display: flex;
-    // flex-direction: row;
-    // align-items: center;
-    // justify-content: stretch;
-    // gap: 1em;
-
-    padding-left: 8em;
-    padding-right: 8em;
-    padding-top: 8em;
-    display: grid;
-    row-gap: 0.5em;
-    column-gap: 5em;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 55px 1fr 50px;
-
-    padding-bottom: 3em;
-    h1 {
-    }
-    h2 {
-        grid-area: 1/1/2/2;
-        text-align: center;
-        padding-bottom: 2em;
-        text-transform: uppercase;
-        font-size: 45px;
-    }
-    h3 {
-    }
-    .main-text-wrapper {
-        grid-area: 2/1/3/2;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        // gap: 2em;
-        p {
-            padding-top: 1em;
-        }
-        h3 {
-            padding-top: 2em;
-        }
-        //FIXME VYCENTROVAT
-        p {
-            font-size: 19px !important; //FIXME Is overriden
-            line-height: 30px;
-        }
-    }
-
-    .list {
-        grid-area: -2/1/-1/3;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        gap: 0.5em;
-        h3 {
-            align-self: auto;
-        }
-        // grid-row: -2/-1;
-    }
-    // .portfolio-container {
-    // }
-    .carousel-inner-text {
-        flex: 2;
-        max-width: 800px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        gap: 1em;
-    }
-
-    h1,
-    h2,
-    h3,
-    p,
-    li {
-        font-family: "AntennaCond", sans-serif !important;
-        color: white;
-    }
-    h1 {
-    }
-    h2 {
-        // grid-column: 2 / span 3;
-        &::first-letter {
-            text-transform: uppercase;
-        }
-    }
-    h3 {
-        font-size: 25px;
-        text-align: left;
-        align-self: flex-start;
-    }
-    p.main-text {
-        // grid-column: 2 / span 1;
-        font-size: 20px;
-        max-width: 80ch;
-    }
-    .vl {
-        // grid-column: border-start / span 1;
-        height: 100%;
-        background-color: $deep-purple;
-        border-radius: 2px;
-    }
-    //#region
-    // .list {
-    //     // grid-column: col2 / span 1;
-    //     display: flex;
-    //     flex-direction: column;
-    //     align-items: center;
-    //     justify-content: flex-start;
-    //     gap: 0.5em;
-    //     p {
-    //         line-height: 25px;
-    //     }
-    //     /*ul {
-    //         padding-left: 1.5em;
-    //         display: flex;
-    //         flex-direction: row;
-    //         align-items: flex-start;
-    //         justify-content: flex-start;
-    //         gap: 0.5em;
-    //         li {
-    //             scroll-margin-inline-start: 15px;
-    //         }
-    //         li::marker {
-    //             color: $deep-purple;
-    //             font-size: 20px;
-    //             margin-inline-end: -5px;
-    //         }
-    //     }*/
-    //     .bullet {
-    //         font-size: 25px;
-    //         font-family: sans-serif !important;
-    //         color: $deep-purple;
-    //         vertical-align: baseline;
-    //         position: relative;
-    //         top: 0.16em;
-    //     }
-    // }
-    //#endregion
-}
-
-.portfolio-container {
-    grid-column: 2/3;
-    grid-row: 1 / span 5;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.5em;
-
-    .portfolio-card {
-        background-color: #dedede;
-        border-radius: 5px; //FIXME
-        box-shadow: inset 5px 5px 8px 8px #8080806e;
-        display: grid;
-        grid-template-columns: 50px 5fr;
-        grid-template-rows: 1fr 2fr;
-
-        row-gap: 0.3em;
-        column-gap: 1em;
-        padding: 1em;
-        .image-wrapper {
-            grid-area: 1/1/3/2;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: .5em;
-            img {
-                width: 100%;
-                height: auto;
-            }
-        }
-        h3 {
-            grid-area: 1/2/2/3;
-        }
-        p {
-            grid-area: 2/2/3/3;
-        }
-        h1,
-        h2,
-        h3,
-        p,
-        li {
-            color: #4c4c4c;
-        }
-        h3 {
-            align-self: left;
-        }
-    }
-}
-
-// .portfolio-hexagon-cards-container {
-//     @include hexagon-card-container(250px, 15px, 0px, 3, 2);
-//     .hexagon-card {
-//         &:nth-child(1) {
-//             grid-area: 1/1/4/4;
-//         }
-//         &:nth-child(2) {
-//             grid-area: 3/3/6/6;
-//         }
-//         &:nth-child(3) {
-//             grid-area: 1/5/4/8;
-//         }
-//         &:nth-child(4) {
-//             grid-area: 5/1/8/4;
-//         }
-//         h1,
-//         h2,
-//         h3,
-//         p,
-//         li {
-//             color: #4c4c4c;
-//         }
-//         h3 {
-//             align-self: auto;
-//         }
-//     }
-// }
-
-/* ----------------------------- section kontakt ---------------------------- */
-
-section.kontakt {
-    background-image: url("../assets/hex_background_1920.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 170%; //FIXME should crop image to this, might be loading way too much
-
-    h1,
-    h2,
-    h3,
-    p,
-    li {
-        color: #4c4c4c;
-    }
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: space-around;
-    padding-right: 5em;
-    width: auto;
-    gap: 0.5em;
-    p {
-        max-width: 60ch;
-        text-align: right;
-    }
-    ul {
-        text-align: right;
-        & > * + * {
-            padding-top: 0.7em;
-        }
-    }
-    li {
-        color: #4c4c4c;
-        font-weight: 500;
-    }
-    li::marker {
-        content: "";
-        display: none;
-    }
-    a {
-        text-decoration: none;
-        color: inherit;
-    }
-    .phone-icon {
-        height: 1.6em;
-        top: 0.3em;
-        margin-left: 0.2em;
-    }
-    .email-icon {
-        font-size: 1.5em;
-        top: 0.1em;
-        margin-right: 0.1em;
-        margin-left: 0.1em;
-    }
-    .phone-icon,
-    .email-icon {
-        color: #000000;
-        filter: invert(0.35);
-        font-weight: 700;
-        position: relative;
     }
 }

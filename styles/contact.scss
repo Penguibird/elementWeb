@@ -1,0 +1,68 @@
+
+section.kontakt {
+    background-image: url("../assets/hex_background_1920.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 170%; //FIXME should crop image to this, might be loading way too much
+    padding-top: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding-right: 5em;
+    width: auto;
+    gap: 0.5em;
+
+
+    h2,
+    h3 {
+        font-weight: 700;
+        font-size: 30px;
+    }
+    h2 {
+        font-size: 40px;
+    }
+    h3 {
+        font-size: 30px;
+    }
+
+    p {
+        max-width: 60ch;
+        text-align: right;
+    }
+    ul {
+        text-align: right;
+        & > * + * {
+            padding-top: 0.7em;
+        }
+    }
+    li {
+        font-weight: 500;
+    }
+    li::marker {
+        content: "";
+        display: none;
+    }
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    .phone-icon {
+        height: 1.6em;
+        top: 0.3em;
+        margin-left: 0.2em;
+    }
+    .email-icon {
+        font-size: 1.5em;
+        top: 0.1em;
+        margin-right: 0.1em;
+        margin-left: 0.1em;
+    }
+    .phone-icon,
+    .email-icon {
+        color: #000000;
+        filter: invert(0.35);
+        font-weight: 700;
+        position: relative;
+    }
+}
