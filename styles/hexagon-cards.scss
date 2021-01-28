@@ -1,0 +1,112 @@
+.hexagon-card-row-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hexagon-portfolio {
+    max-width: 1400px;
+    width: 90vw;
+    justify-content: center;
+
+    gap: 1vw;
+    .hexagon-card {
+        $width: 220px;
+        width: $width;
+        height: $width * (0.8660254 * 0.9);
+
+        h3 {
+            font-size: 22px;
+        }
+        p {
+            font-size: 18px;
+            line-height: 22px;
+            text-align: center;
+        }
+
+        .text-wrapper {
+            flex: 4;
+        }
+        .icon-wrapper {
+            flex: 1;
+            img {
+                height: 100%;
+                width: auto;
+            }
+        }
+    }
+}
+
+.hexagon-controls {
+    max-width: 1400px;
+    width: 90vw;
+    align-self: center;
+
+    $width: 150px; //applies to card
+
+    @media screen and (max-width: 900px) {
+        $width: 150px;
+        display: grid;
+        grid-template-columns: repeat(3, $width);
+        grid-template-rows: 1fr 1fr;
+        justify-items: center; 
+        width: 65vw;
+    }
+    gap: 3vw;
+
+    .hexagon-card {
+        @media screen and (max-width: 1200px) {
+            $width: 120px;
+            width: $width;
+            height: $width * 0.8660254;
+        }
+        @media screen and (max-width: 900px) {
+            $width: 150px;
+            width: $width;
+            height: $width * 0.8660254;
+        }
+        @media screen and (min-width: 1201px) {
+            $width: 150px;
+            width: $width;
+            height: $width * 0.8660254;
+        }
+    }
+}
+
+.hexagon-card {
+    background-image: url("../assets/hexagon_card.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: stretch;
+    gap: 1em;
+    padding: 1em;
+
+    img {
+        flex: 1;
+
+        // height: 40%;
+        width: auto;
+    }
+    .text-wrapper {
+        flex: 1;
+
+        height: 40%;
+        max-width: 70%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+    }
+    h3 {
+        font-size: 17px;
+        vertical-align: middle;
+    }
+}

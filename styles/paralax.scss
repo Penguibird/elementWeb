@@ -7,10 +7,6 @@ $perspective: 10px;
 
 $paralax-section-height: 2117px; //! DIRTY
 
-.static-content {
-    position: relative;
-    top: $paralax-section-height;
-}
 
 .paralax {
     perspective: $perspective;
@@ -71,7 +67,6 @@ $paralax-section-height: 2117px; //! DIRTY
 @media screen and (max-width: 900px) {
 }
 
-@media screen and (min-width: 901px) {
     .paralax-mb-triangle {
         @include paralax(-30px);
     }
@@ -98,7 +93,7 @@ $paralax-section-height: 2117px; //! DIRTY
         @include paralax($main-blob-base + 4.5px);
     }
     .paralax-mb_text {
-        @include paralax($main-blob-base + 4.7px);
+        @include paralax($main-blob-base + 5px);
     }
     .paralax-line_1 {
         @include paralax($main-blob-base + 5.5px);
@@ -128,7 +123,7 @@ $paralax-section-height: 2117px; //! DIRTY
         @include paralax($b3-base - 0.2px);
     }
     .paralax-small_blob_2 {
-        @include paralax(2.5px);
+        @include paralax(5px);
     }
     .paralax-small_blob_3 {
         @include paralax(4px);
@@ -137,9 +132,11 @@ $paralax-section-height: 2117px; //! DIRTY
         @include paralax($b3-base + 0.7px);
     }
     .paralax-small_blob_5 {
-        @include paralax(-0.5px);
+        @include paralax(-2.5px);
     }
     .paralax-triangle_2 {
         @include paralax(-4px);
     }
-}
+    .paralax-small_blob_7 {
+        @include paralax(1px)
+    }

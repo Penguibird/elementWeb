@@ -3,13 +3,253 @@
     width: $width * 1px;
 }
 
+@mixin positionLeftMD($left, $width) {
+    left: calc(#{(($left + ($width/2)) / 900) * 100}% - #{$width * 1px / 2});
+    width: $width * 1px;
+}
+
+@mixin positionLeftSM($left, $width) {
+    $width: $width * 1;
+    left: calc(#{(($left + ($width/2)) / 635) * 100}% - #{$width * 1px / 2});
+    width: $width * 1px;
+}
+
 /* ------------------------------- positioning ------------------------------ */
 
 .rotated-triangle {
     transform: rotateZ(-90deg) scaleX(-1);
 }
-@media screen and (max-width: 900px) {
+
+@media screen and (min-width: 676px) and (max-width: 900px) {
+    .mb-triangle {
+        top: 75px;
+        @include positionLeftMD(504, 204);
+    }
+    .small_blob_1 {
+        top: 52px;
+        @include positionLeftMD(77, 93);
+    }
+
+    // #region main blob
+    .mb_back_blob {
+        top: 124px;
+        @include positionLeftMD(292, 331);
+    }
+
+    .mb_mid_blob_shadow {
+        top: 188px;
+        @include positionLeftMD(174, 439);
+    }
+
+    .mb_mid_blob {
+        top: 188px;
+        @include positionLeftMD(200, 439);
+    }
+
+    .mb_main_blob_shadow {
+        top: 200px;
+        @include positionLeftMD(165, 526);
+    }
+
+    .mb_main_blob {
+        top: 97px;
+        @include positionLeftMD(200, 517);
+    }
+    .line_1 {
+        top: 97px;
+        @include positionLeftMD(148, 166);
+    }
+    .line_2 {
+        top: 337px;
+        @include positionLeftMD(669, 86);
+    }
+
+    .mb_text {
+        position: absolute;
+        top: 270px;
+        @include positionLeftMD(280, 320);
+    }
+    // #endregion
+
+    $b2-offset: 100px;
+    .b2_main {
+        top: 717px + $b2-offset;
+        @include positionLeftMD(535, 297);
+    }
+    .b2_text {
+        position: absolute;
+        top: 870px + $b2-offset;
+        @include positionLeftMD(550, 268);
+    }
+
+    // #region blob 3
+    $b3-offset: 320px;
+    .b3_main {
+        top: 949px + $b3-offset;
+        @include positionLeftMD(107, 317);
+    }
+    .b3_hexagon_shadow {
+        top: 1017px + $b3-offset;
+        @include positionLeftMD(107, 275);
+    }
+    .b3_text {
+        position: absolute;
+        top: 1160px + $b3-offset;
+        @include positionLeftMD(143, 197);
+    }
+    .line_3 {
+        top: 1002px + $b3-offset;
+        @include positionLeftMD(380, 80);
+    }
+    .triangle_2 {
+        top: 652px + $b3-offset;
+        @include positionLeftMD(65, 209);
+    }
+    // .small_blob_4 {
+    // }
+    // #endregion
+
+    .small_blob_2 {
+        top: 2057px;
+        @include positionLeftMD(720, 74);
+    }
+
+    .small_blob_3 {
+        top: 199px;
+        @include positionLeftMD(697, 67);
+    }
+
+    .small_blob_5 {
+        top: 607px;
+        @include positionLeftMD(103, 108);
+    }
+    .small_blob_7 {
+        top: 1100px;
+        @include positionLeftMD(500, 99);
+    }
 }
+
+@media screen and (max-width: 675px) {
+    .mb-triangle {
+        top: 35px;
+        @include positionLeftSM(333, 128);
+    }
+    .small_blob_1 {
+        top: 27px;
+        @include positionLeftSM(68, 57);
+    }
+
+    // #region main blob
+    .mb_back_blob {
+        top: 86px;
+        @include positionLeftSM(207, 245);
+    }
+
+    .mb_mid_blob_shadow {
+        top: 133px;
+        @include positionLeftSM(120, 326);
+    }
+
+    .mb_mid_blob {
+        top: 133px;
+        @include positionLeftSM(139, 326);
+    }
+
+    .mb_main_blob_shadow {
+        top: 142px;
+        @include positionLeftSM(113, 390);
+    }
+
+    .mb_main_blob {
+        top: 65px;
+        @include positionLeftSM(138, 383);
+    }
+    .line_1 {
+        top: 80px;
+        @include positionLeftSM(127, 123);
+    }
+    .line_2 {
+        top: 241px;
+        @include positionLeftSM(478, 71);
+    }
+
+    .mb_text {
+        position: absolute;
+        top: 193px;
+        @include positionLeftSM(192, 244);
+        h1 {
+            font-size: 90px !important;
+        }
+        p {
+            font-size: 25px !important;
+        }
+    }
+    // #endregion
+
+    $b2-offset: 80px;
+    .b2_main {
+        top: 518px + $b2-offset;
+        @include positionLeftSM(331, 218);
+    }
+    .b2_text {
+        position: absolute;
+        top: 625px + $b2-offset;
+        @include positionLeftSM(365, 153);
+        p {
+            font-size: 21px !important;
+        }
+    }
+
+    // #region blob 3
+    $b3-offset: 270px;
+    .b3_main {
+        top: 757px + $b3-offset;
+        @include positionLeftSM(88, 238);
+    }
+    .b3_hexagon_shadow {
+        top: 785px + $b3-offset;
+        @include positionLeftSM(88, 221);
+    }
+    .b3_text {
+        position: absolute;
+        top: 903px + $b3-offset;
+        @include positionLeftSM(118, 161);
+        p {
+            font-size: 23px !important;
+        }
+    }
+    .line_3 {
+        top: 811px + $b3-offset;
+        @include positionLeftSM(280, 65);
+    }
+    .triangle_2 {
+        top: 612px + $b3-offset;
+        @include positionLeftSM(26, 144);
+    }
+    // .small_blob_4 {
+    // }
+    // #endregion
+
+    .small_blob_2 {
+        top: 538px;
+        @include positionLeftSM(99, 52);
+    }
+
+    .small_blob_3 {
+        top: 492;
+        @include positionLeftSM(543, 32);
+    }
+
+    .small_blob_5 {
+        top: 607px;
+        @include positionLeftMD(103, 108);
+    }
+    .small_blob_7 {
+        top: 850px;
+        @include positionLeftMD(715, 99);
+    }
+}
+
 
 @media screen and (min-width: 901px) {
     // todo cutoff point 1400 for line and small blob positions
@@ -22,33 +262,39 @@
     $scaling-factor-mb-1: 0.6;
     .small_blob_1 {
         top: 180px;
-        @include positionLeft(460, 120);
+        @include positionLeft(260, 120);
     }
 
     // #region main blob
     .mb_back_blob {
-        top: 180px;
-        @include positionLeft(735, 518);
+        top: 223px;
+        @include positionLeft(769, 392);
     }
     .mb_mid_blob_shadow {
-        top: 260px;
-        @include positionLeft(550, 688);
+        top: 290px;
+        @include positionLeft(630, 530);
     }
     .mb_mid_blob {
-        top: 280px;
-        @include positionLeft(591, 688);
+        top: 298px;
+        @include positionLeft(661, 510);
     }
     .mb_main_blob_shadow {
-        top: 257px;
-        @include positionLeft(537, 823);
+        top: 312px;
+        @include positionLeft(619, 623);
     }
     .mb_main_blob {
-        top: 135px;
-        @include positionLeft(589, 809);
+        top: 190px;
+        @include positionLeft(658, 612);
     }
     .line_1 {
         top: 168px;
         @include positionLeft(586, 260);
+        @media screen and (max-width: 1430px) {
+            @include positionLeft(536, 260);
+        }
+        @media screen and (max-width: 1030px) {
+            @include positionLeft(356, 260);
+        }
     }
     .line_2 {
         top: 496px;
@@ -58,7 +304,7 @@
     .mb_text {
         position: absolute;
         top: 410px;
-        @include positionLeft(715, 518);
+        @include positionLeft(791, 308);
     }
     //#endregion main blob
     .small_blob_2 {
@@ -69,33 +315,33 @@
     $b2-offset: 0px;
     .b2_main {
         top: 1057px + $b2-offset;
-        @include positionLeft(1177, 522);
+        @include positionLeft(1250, 325);
     }
 
     .b2_text {
         /* -------------------------------- text blob ------------------------------- */
         position: absolute;
-        top: 1295px + $b2-offset;
-        @include positionLeft(1280, 322);
+        top: 1245px + $b2-offset;
+        @include positionLeft(1295, 236);
     }
     // #region blob 3
-    $b3-offset: 100px;
+    $b3-offset: -150px;
     .b3_main {
         top: 1750px + $b3-offset;
-        @include positionLeft(310, 502);
+        @include positionLeft(365, 330);
     }
     .b3_hexagon_shadow {
         top: 1809px + $b3-offset;
-        @include positionLeft(295, 493);
+        @include positionLeft(365, 320);
     }
     .b3_text {
         /* -------------------------------- text blob ------------------------------- */
         position: absolute;
-        top: 2080px + $b3-offset;
-        @include positionLeft(364, 350);
+        top: 2000px + $b3-offset;
+        @include positionLeft(410, 223);
     }
     .line_3 {
-        top: 1890px + $b3-offset;
+        top: 1620px+ 150px + $b3-offset;
         @include positionLeft(751, 108);
     }
     .triangle_2 {
@@ -103,12 +349,9 @@
         @include positionLeft(343, 230);
     }
     .small_blob_4 {
-
-/* ---------------------------------- marke --------------------------------- */
-
         top: 2308px;
         @include positionLeft(595, 130);
-        //FIXME Blurry
+        display: none; //Not  Blurry anymore
     }
     // #endregion blob 3
 
@@ -117,7 +360,11 @@
         @include positionLeft(1705, 102);
     }
     .small_blob_5 {
-        top: 1449px;
+        top: 1200px;
         @include positionLeft(995, 227);
+    }
+    .small_blob_7 {
+        top: 1200px;
+        @include positionLeft(900, 99);
     }
 }

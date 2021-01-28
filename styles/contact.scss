@@ -5,6 +5,7 @@ section.kontakt {
     background-repeat: no-repeat;
     background-size: 170%; //FIXME should crop image to this, might be loading way too much
     padding-top: 2em;
+    padding-bottom: 2em;
     display: flex;
     flex-direction: column;
     align-items: flex-end;

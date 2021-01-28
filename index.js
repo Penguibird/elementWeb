@@ -7,7 +7,19 @@ $(document).ready(() => {
         let newIndex = e.to;
         setSelectedControl(oldIndex, newIndex);
     })
+    // let paralax = document.querySelector('.paralax');
+    // paralax.addEventListener('scroll', ev => {
+    //     console.log(ev.target.scrollTop)
+    //     const scrollCutOff = 1632;
+    //     if (ev.target.scrollTop >= scrollCutOff) {
+    //         console.log("END")
+    //         stopParalaxForMain()
+    //     } if (ev.target.scrollTop < scrollCutOff) {
+    //         startParalaxForMain()
+    //     }
+    // })
 })
+
 
 const flipToSlide = (i) => {
     console.log("fliping to", i)
@@ -20,4 +32,15 @@ const setSelectedControl = (from, to) => {
     // console.log(list, list[0], to)
     list.item(from).classList.remove("selected");
     list.item(to).classList.add("selected");
+}
+
+
+const stopParalaxForMain = () => {
+    // document.getElementsByClassName('static-content')[0].style.display = "none";
+    // document.getElementsByClassName('static-content')[0].classList.add('no-paralax');
+
+    // document.getElementsByClassName('static-content')[0].style.display = "block";
+}
+const startParalaxForMain = () => {
+    // document.getElementsByClassName('static-content')[0].classList.remove('no-paralax')
 }
