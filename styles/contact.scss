@@ -1,19 +1,34 @@
-
 section.kontakt {
     background-image: url("../assets/hex_background_1920.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 170%; //FIXME should crop image to this, might be loading way too much
-    padding-top: 2em;
-    padding-bottom: 2em;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: space-around;
-    padding-right: 5em;
-    width: auto;
-    gap: 0.5em;
-
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+    .logo-wrapper {
+        padding-left: 8vw;
+        padding-bottom: 1vw;
+        max-width: 300px;
+        width: 25vw;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    .contact-wrapper {
+        padding-top: 4em;
+        padding-bottom: 8em;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-around;
+        padding-right: 5em;
+        width: auto;
+        gap: 0.5em;
+    }
 
     h2,
     h3 {

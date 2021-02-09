@@ -1,11 +1,31 @@
+//* pallette
+$light-blue: #1bcae6;
+// $deep-blue: #4067f2;
+$deep-purple: #9a57c1; // #8c50ba;
+// $light-purple: #b12df6;
+$pink: #db2689;
+// $orange: #fa705f;
+
 @import "./paralax.scss";
 @import "./positions.scss";
 @import "./fontImport.scss";
 @import "./contact.scss";
 @import "./mediaInfo.scss";
 @import "./hexagon-cards.scss";
+@import "./navigation.scss";
 
-@import "../bootstrap/_carousel.scss";
+// @import "../bootstrap/_carousel.scss";
+
+@media screen and (max-width: 675px) {
+    br {
+        display: none !important;
+    }
+    .b2_text {
+        br {
+            display: block !important;
+        }
+    }
+}
 
 @media screen and (prefers-reduced-motion: reduce) {
     * {
@@ -25,9 +45,15 @@ button {
     border: none;
 }
 
+button,
+a {
+    cursor: pointer;
+}
+
 html {
-    overflow-x: hidden;
     background-image: url("../assets/background_blobs_1920.png");
+    overflow-x: hidden;
+    overflow-y: hidden;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -41,39 +67,68 @@ main {
     // height: 2117px;
 }
 
-// TODO Proper card icons
-// TODO Proper card design
-// TODO color sections
-// TODO Add more blobs
-// TODO Mobile design : Paralax, everything
+// TODO Better arrow desing plus animations
 
 $text-shadow: 2.5px 2.5px 7px #5252525b;
 
-//* pallette
-$light-blue: #1bcae6;
-$deep-blue: #4067f2;
-$deep-purple: #9651bb; // #8c50ba;
-$light-purple: #b12df6;
-$pink: #e9449e;
-$orange: #fa705f;
-
 .light-blue {
     color: $light-blue !important;
+    b,
+    a {
+        color: $light-blue !important;
+    }
+    p {
+        color: white;
+    }
 }
-.deep-blue {
-    color: $deep-blue !important;
-}
+
 .deep-purple {
     color: $deep-purple !important;
+    b,
+    a {
+        color: $deep-purple !important;
+    }
+    p {
+        color: white;
+    }
 }
-.light-purple {
-    color: $light-purple !important;
-}
+
 .pink {
     color: $pink !important;
+    b,
+    a {
+        color: $pink !important;
+    }
+    p {
+        color: white;
+    }
 }
-.orange {
-    color: $orange !important;
+.light-blue-a {
+    a {
+        color: $light-blue !important;
+    }
+}
+
+.deep-purple-a {
+    a {
+        color: $deep-purple !important;
+    }
+}
+
+.pink-a {
+    a {
+        color: $pink !important;
+    }
+}
+
+.deep-purple-text {
+    p,
+    a,
+    h1,
+    h2,
+    h3 {
+        color: $deep-purple;
+    }
 }
 
 h1,
@@ -153,7 +208,7 @@ li {
     position: absolute;
     top: 1900px;
     @media screen and (max-width: 675px) {
-        top: 1120px;
+        top: 980px;
     }
     @media screen and (min-width: 676px) and (max-width: 900px) {
         top: 1500px;
@@ -166,8 +221,6 @@ li {
         top: 2337px;
     }
     transition: transform ease-in-out 0.1s; //, top ease-in-out 0.1s;
-    // FIXME dont use hardcoded px
-    // TODO make sure scrollings proper
 }
 
 .section-main-text {
@@ -177,10 +230,9 @@ li {
     align-items: center;
     justify-content: space-around;
     gap: 4em;
-    // background-image: url("../assets/hex_background_1920.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 170%; //FIXME should crop image to this, might be loading way too much
+    @media screen and (max-width: 675px) {
+        gap: 2em;
+    }
 
     padding-top: 1em;
     padding-bottom: 3em;
@@ -202,9 +254,16 @@ li {
         grid-template-rows: auto;
         grid-template-columns: 500px 1fr 80ch 1fr;
 
-        @media screen and (max-width: 900px) {
-            $gap: 2em;
-            grid-template-columns: $gap 1fr 80vw 1fr $gap;
+        @media screen and (max-width: 1200px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            padding: 0.5em;
+            gap: 2em;
+            @media screen and (max-width: 675px) {
+                gap: 1em;
+            }
             p.first {
                 grid-column: 3/4;
             }
@@ -212,7 +271,7 @@ li {
                 grid-column: 2/-2;
             }
         }
-        @media screen and (min-width: 901px) {
+        @media screen and (min-width: 1201px) {
             p.first {
                 grid-column: 3/4;
             }
@@ -228,14 +287,21 @@ li {
             font-weight: 500; //900
             padding-bottom: 0.2em;
             color: $light-blue; //?
+            max-width: 97vw;
+            box-sizing: border-box;
         }
         @media screen and (max-width: 675px) {
             h1 {
-                font-size: 40px;
+                font-size: 35px;
+            }
+            p {
+                font-size: 17px;
+                line-height: 27px;
             }
         }
         p.first {
-            max-width: 80ch;
+            max-width: min(80ch, 97vw);
+            text-align: center;
         }
     }
     .text-wrapper {

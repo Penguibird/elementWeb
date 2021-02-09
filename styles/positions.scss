@@ -10,8 +10,8 @@
 
 @mixin positionLeftSM($left, $width) {
     $width: $width * 1;
-    left: calc(#{(($left + ($width/2)) / 635) * 100}% - #{$width * 1px / 2});
-    width: $width * 1px;
+    left: calc(#{(($left + ($width/2)) / 635) * 100}% - #{$width * 0.7px / 2});
+    width: $width * 0.7px;
 }
 
 /* ------------------------------- positioning ------------------------------ */
@@ -21,52 +21,58 @@
 }
 
 @media screen and (min-width: 676px) and (max-width: 900px) {
+    .logo_with_line {
+        display: none;
+        top: 20px;
+        left: 20px;
+        width: 1500px;
+    }
     .mb-triangle {
-        top: 75px;
+        top: 75px +30px;
         @include positionLeftMD(504, 204);
     }
     .small_blob_1 {
-        top: 52px;
-        @include positionLeftMD(77, 93);
+        top: 342px;
+        @include positionLeftMD(57, 93);
     }
 
     // #region main blob
     .mb_back_blob {
-        top: 124px;
+        top: 124px +30px;
         @include positionLeftMD(292, 331);
     }
 
     .mb_mid_blob_shadow {
-        top: 188px;
+        top: 188px +30px;
         @include positionLeftMD(174, 439);
     }
 
     .mb_mid_blob {
-        top: 188px;
+        top: 188px +30px;
         @include positionLeftMD(200, 439);
     }
 
     .mb_main_blob_shadow {
-        top: 200px;
+        top: 200px +30px;
         @include positionLeftMD(165, 526);
     }
 
     .mb_main_blob {
-        top: 97px;
+        top: 97px +30px;
         @include positionLeftMD(200, 517);
     }
     .line_1 {
-        top: 97px;
+        top: 97px +30px;
         @include positionLeftMD(148, 166);
     }
     .line_2 {
-        top: 337px;
+        top: 337px +30px;
         @include positionLeftMD(669, 86);
     }
 
     .mb_text {
         position: absolute;
-        top: 270px;
+        top: 270px +30px;
         @include positionLeftMD(280, 320);
     }
     // #endregion
@@ -120,8 +126,8 @@
     }
 
     .small_blob_5 {
-        top: 607px;
-        @include positionLeftMD(103, 108);
+        top: 627px;
+        @include positionLeftMD(153, 108);
     }
     .small_blob_7 {
         top: 1100px;
@@ -130,92 +136,99 @@
 }
 
 @media screen and (max-width: 675px) {
+    .logo_with_line {
+        display: none;
+        top: 20px;
+        left: 20px;
+        width: 800px;
+    }
+
     .mb-triangle {
         top: 35px;
         @include positionLeftSM(333, 128);
     }
     .small_blob_1 {
-        top: 27px;
+        top: 187px;
         @include positionLeftSM(68, 57);
     }
 
     // #region main blob
     .mb_back_blob {
-        top: 86px;
+        top: 86px + 50px;
         @include positionLeftSM(207, 245);
     }
 
     .mb_mid_blob_shadow {
-        top: 133px;
+        top: 133px + 50px;
         @include positionLeftSM(120, 326);
     }
 
     .mb_mid_blob {
-        top: 133px;
+        top: 133px + 50px;
         @include positionLeftSM(139, 326);
     }
 
     .mb_main_blob_shadow {
-        top: 142px;
+        top: 142px + 50px;
         @include positionLeftSM(113, 390);
     }
 
     .mb_main_blob {
-        top: 65px;
+        top: 65px + 50px;
         @include positionLeftSM(138, 383);
     }
     .line_1 {
-        top: 80px;
+        top: 80px + 50px;
         @include positionLeftSM(127, 123);
     }
     .line_2 {
-        top: 241px;
+        top: 241px + 50px;
         @include positionLeftSM(478, 71);
     }
 
     .mb_text {
         position: absolute;
-        top: 193px;
+        top: 140px + 50px;
         @include positionLeftSM(192, 244);
         h1 {
-            font-size: 90px !important;
+            font-size: 70px !important;
         }
         p {
-            font-size: 25px !important;
+            font-size: 23px !important;
         }
     }
     // #endregion
 
-    $b2-offset: 80px;
+    $b2-offset: -60px;
     .b2_main {
         top: 518px + $b2-offset;
         @include positionLeftSM(331, 218);
     }
     .b2_text {
         position: absolute;
-        top: 625px + $b2-offset;
+        top: 585px + $b2-offset;
         @include positionLeftSM(365, 153);
         p {
-            font-size: 21px !important;
+            font-size: 17px !important;
         }
     }
 
     // #region blob 3
-    $b3-offset: 270px;
+    $b3-offset: 70px;
     .b3_main {
         top: 757px + $b3-offset;
         @include positionLeftSM(88, 238);
     }
     .b3_hexagon_shadow {
-        top: 785px + $b3-offset;
+        top: 809px - 70px + $b3-offset;
         @include positionLeftSM(88, 221);
     }
     .b3_text {
         position: absolute;
-        top: 903px + $b3-offset;
+        top: 861px - 70px + $b3-offset;
         @include positionLeftSM(118, 161);
         p {
-            font-size: 23px !important;
+            font-size: 17px !important;
         }
     }
     .line_3 {
@@ -241,53 +254,56 @@
     }
 
     .small_blob_5 {
-        top: 607px;
-        @include positionLeftMD(103, 108);
+        top: 507px;
+        @include positionLeftMD(233, 108);
     }
     .small_blob_7 {
         top: 850px;
-        @include positionLeftMD(715, 99);
+        @include positionLeftMD(515, 99);
     }
 }
 
-
 @media screen and (min-width: 901px) {
-    // todo cutoff point 1400 for line and small blob positions
-    //todo move blob 2 and 3 lower
+    .logo_with_line {
+        top: 40px;
+        left: 60px;
+        width: 1900px;
+        // @include positionLeft(80, 220)
+    }
+
     .mb-triangle {
         top: 75px;
         @include positionLeft(1011, 245);
     }
 
-    $scaling-factor-mb-1: 0.6;
     .small_blob_1 {
-        top: 180px;
+        top: 380px;
         @include positionLeft(260, 120);
     }
 
     // #region main blob
     .mb_back_blob {
-        top: 223px;
+        top: 223px +50px;
         @include positionLeft(769, 392);
     }
     .mb_mid_blob_shadow {
-        top: 290px;
+        top: 290px +50px;
         @include positionLeft(630, 530);
     }
     .mb_mid_blob {
-        top: 298px;
+        top: 298px +50px;
         @include positionLeft(661, 510);
     }
     .mb_main_blob_shadow {
-        top: 312px;
+        top: 312px +50px;
         @include positionLeft(619, 623);
     }
     .mb_main_blob {
-        top: 190px;
+        top: 190px +50px;
         @include positionLeft(658, 612);
     }
     .line_1 {
-        top: 168px;
+        top: 168px +50px;
         @include positionLeft(586, 260);
         @media screen and (max-width: 1430px) {
             @include positionLeft(536, 260);
@@ -297,13 +313,13 @@
         }
     }
     .line_2 {
-        top: 496px;
+        top: 496px +50px;
         @include positionLeft(1260, 150);
     }
 
     .mb_text {
         position: absolute;
-        top: 410px;
+        top: 410px +50px;
         @include positionLeft(791, 308);
     }
     //#endregion main blob

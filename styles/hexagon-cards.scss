@@ -5,30 +5,141 @@
     justify-content: space-between;
 }
 
+@mixin hexagon-card-container($wWidth, $gutter, $offset, $rowNum, $colNum) {
+    $hexagon-card-width: $wWidth;
+    $hexagon-card-height: $hexagon-card-width * 0.86602540378;
+
+    $hexagon-card-gutter: $gutter;
+    $hexagon-card-gutter-offset: ($hexagon-card-height/2) - ($hexagon-card-gutter * 0.5);
+
+    $hexagon-card-gutter-horizontal: $hexagon-card-gutter/0.86602540378;
+    $hexagon-card-feelgood-offset: $offset;
+
+    padding-top: $hexagon-card-gutter;
+    display: grid;
+
+    // gap: 2em;
+
+    $rows: null;
+    @for $i from 0 through $rowNum {
+        $rows: $rows + #{" " + $hexagon-card-gutter-offset + " " + $hexagon-card-gutter};
+    }
+    grid-template-rows: $rows;
+
+    $columns: null;
+    @for $i from 0 through $colNum {
+        $columns: $columns +
+            #{" "+
+            (($hexagon-card-width/4) - $hexagon-card-gutter-horizontal) +
+            " " +
+            (($hexagon-card-width/2) + 2 * $hexagon-card-gutter-horizontal + $hexagon-card-feelgood-offset)};
+    }
+    $columns: $columns + #{" "+ (($hexagon-card-width/4) - $hexagon-card-gutter-horizontal)};
+    // " "
+    // (($hexagon-card-width/4) - $hexagon-card-gutter-horizontal)
+    grid-template-columns: $columns;
+
+    .hexagon-card {
+        width: $hexagon-card-width;
+        height: $hexagon-card-height;
+    }
+    .hexagon-card {
+        &:nth-child(1) {
+            grid-area: 1/1/4/4;
+        }
+        &:nth-child(2) {
+            grid-area: 3/3/6/6;
+        }
+        &:nth-child(3) {
+            grid-area: 5/1/8/4;
+        }
+        &:nth-child(4) {
+            grid-area: 7/3/10/6;
+        }
+        &:nth-child(5) {
+            grid-area: 9/1/12/4;
+        }
+        //     &:nth-child(6) {
+        //         grid-area: 3/11/6/14;
+        //     }
+    }
+}
+
 .hexagon-portfolio {
     max-width: 1400px;
     width: 90vw;
-    justify-content: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 
-    gap: 1vw;
+    gap: 2vw;
+    row-gap: 4vw;
+
+    .hexagon-card h3 {
+        font-size: 24px;
+        @media screen and (max-width: 675px) {
+            font-size: 20px;
+        }
+    }
+    p {
+        font-size: 16px;
+        line-height: 22px;
+        @media screen and (max-width: 675px) {
+            font-size: 16px;
+            line-height: 18px;
+        }
+    }
+    a {
+        font-weight: 600;
+        // color: $deep-purple;
+        &::before {
+            content: "▶";
+            margin-inline-end: 0.5ch;
+            font-size: 12px;
+            line-height: 22px;
+            text-decoration: none !important;
+            display: inline-block;
+            color: #4c4c4c;
+        }
+    }
+
     .hexagon-card {
-        $width: 220px;
+        $width: 300px;
         width: $width;
-        height: $width * (0.8660254 * 0.9);
-
+        height: $width * (0.8660254 * 1);
+        // @media screen and (max-width: 675px) {
+        //     $width: 270px;
+        //     width: $width;
+        //     height: $width * (0.65 * 1);
+        // }
+        justify-content: stretch;
+        //a lot of the layout properties here are important for text clipping
+        padding: 0;
         h3 {
-            font-size: 22px;
+            flex: 1;
         }
         p {
-            font-size: 18px;
-            line-height: 22px;
             text-align: center;
         }
-
         .text-wrapper {
+            margin-bottom: 1em;
             flex: 4;
+            gap: 0.7em;
+            @media screen and (max-width: 675px) {
+                flex: 5;
+                gap: 0.1em;
+            }
+            // width: 120%;
+            max-width: unset;
+            justify-content: stretch;
         }
         .icon-wrapper {
+            margin-top: 1em;
+            padding: 0.5em;
+            height: 15%;
+            @media screen and (max-width: 675px) {
+                margin-top: 0.8em;
+                padding: 0.1em;
+            }
             flex: 1;
             img {
                 height: 100%;
@@ -36,33 +147,61 @@
             }
         }
     }
+    @media screen and (max-width: 680px) {
+        // display: grid;
+        $shift: 30vw;
+        @include hexagon-card-container(250px, 30px, -5px, 5, 1);
+        left: 0;
+        max-width: 97vw;
+        box-sizing: border-box;
+        gap: 0 !important;
+    }
+}
+
+.text-clipper {
+    flex: 10;
+
+    .before {
+        float: left;
+        shape-outside: polygon(-5% 0, -5% 100%, 45% 100%);
+    }
+    .after {
+        float: right;
+        shape-outside: polygon(105% 0, 55% 100%, 105% 100%);
+    }
+    .before,
+    .after {
+        height: 100%;
+        width: 50%;
+        shape-margin: 8px;
+    }
 }
 
 .hexagon-controls {
     max-width: 1400px;
     width: 90vw;
     align-self: center;
-
-    $width: 150px; //applies to card
+    gap: 3vw;
 
     @media screen and (max-width: 900px) {
-        $width: 150px;
+        $width: 120px;
         display: grid;
         grid-template-columns: repeat(3, $width);
         grid-template-rows: 1fr 1fr;
-        justify-items: center; 
-        width: 65vw;
-    }
-    gap: 3vw;
-
-    .hexagon-card {
-        @media screen and (max-width: 1200px) {
-            $width: 120px;
+        justify-items: center;
+        width: unset;
+        .hexagon-card {
             width: $width;
             height: $width * 0.8660254;
         }
-        @media screen and (max-width: 900px) {
-            $width: 150px;
+        br {
+            display: block !important;
+        }
+        font-size: 14px !important;
+    }
+    .hexagon-card {
+        @media screen and (max-width: 1200px) and (min-width: 901px) {
+            $width: 120px;
             width: $width;
             height: $width * 0.8660254;
         }
@@ -71,6 +210,9 @@
             width: $width;
             height: $width * 0.8660254;
         }
+    }
+    @media screen and (max-width: 675px) {
+        margin-bottom: 2em;
     }
 }
 
@@ -89,8 +231,10 @@
 
     img {
         flex: 1;
-
-        // height: 40%;
+        height: 50%;
+        @media screen and (max-width: 675px) {
+            height: 40%;
+        }
         width: auto;
     }
     .text-wrapper {
@@ -104,9 +248,16 @@
         align-items: center;
         justify-content: center;
         gap: 0;
+        @media screen and (max-width: 675px) {
+            flex: 3;
+        }
     }
     h3 {
+        text-align: center;
         font-size: 17px;
         vertical-align: middle;
+        @media screen and (max-width: 675px) {
+            font-size: 14px;
+        }
     }
 }
