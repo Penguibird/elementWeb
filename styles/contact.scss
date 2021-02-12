@@ -5,9 +5,11 @@ section.kontakt {
     background-size: 170%; //FIXME should crop image to this, might be loading way too much
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 0.2em;
+    margin-top: 4em;
+    padding: 4em;
     .logo-wrapper {
         padding-left: 8vw;
         padding-bottom: 1vw;
@@ -19,13 +21,15 @@ section.kontakt {
         }
     }
     .contact-wrapper {
-        padding-top: 4em;
-        padding-bottom: 8em;
+        padding-top: 13vw;
+        @media screen and (min-width: 1200px) {
+            padding-top: 0.13 * 1200px;
+
+        }
         display: flex;
         flex-direction: column;
         align-items: flex-end;
         justify-content: space-around;
-        padding-right: 5em;
         width: auto;
         gap: 0.5em;
     }
@@ -37,9 +41,12 @@ section.kontakt {
     }
     h2 {
         font-size: 40px;
+        color: white;
+        display: none; // FIXME Display none at contact
     }
     h3 {
         font-size: 30px;
+        color: #f04fa0;
     }
 
     p {
@@ -54,6 +61,8 @@ section.kontakt {
     }
     li {
         font-weight: 500;
+        font-size: 22px;
+        color: #5ab2ca;
     }
     li::marker {
         content: "";
@@ -76,8 +85,8 @@ section.kontakt {
     }
     .phone-icon,
     .email-icon {
-        color: #000000;
-        filter: invert(0.35);
+        color: #5ab2ca;
+        // filter: invert(0.35);
         font-weight: 700;
         position: relative;
     }

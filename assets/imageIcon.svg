@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="164.838" height="190.339" viewBox="0 0 164.838 190.339">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 11px;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="imageIcon" transform="translate(-1132.375 -194.331)">
+    <path id="Path_143" data-name="Path 143" class="cls-1" d="M520.666,778.772l-76.919-44.409V645.544l76.919-44.409,76.919,44.409v88.819Z" transform="translate(694.128 -400.454)"/>
+    <path id="Union_1" data-name="Union 1" class="cls-2" d="M0,52.547v-7H.025L21.746,11.553,37.125,34.442,58.853,0,86.544,45.951h.027v6.6Z" transform="translate(1171.5 262.452)"/>
+  </g>
+</svg>

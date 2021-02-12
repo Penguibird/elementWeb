@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="164.838" height="190.339" viewBox="0 0 164.838 190.339">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-1 {
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 11px;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="webIcon" transform="translate(-1200.698 -53.331)">
+    <path id="Path_154" data-name="Path 154" class="cls-1" d="M520.666,778.772l-76.919-44.409V645.544l76.919-44.409,76.919,44.409v88.819Z" transform="translate(762.451 -541.454)"/>
+    <g id="public-24px" transform="translate(1234.585 99.808)">
+      <g id="Group_224" data-name="Group 224" transform="translate(0 -0.223)">
+        <rect id="Rectangle_20" data-name="Rectangle 20" class="cls-2" width="97" height="97" transform="translate(0.415 0.415)"/>
+      </g>
+      <g id="Group_226" data-name="Group 226" transform="translate(8.123 8.251)">
+        <g id="Group_225" data-name="Group 225">
+          <path id="Path_156" data-name="Path 156" class="cls-3" d="M42.616,2A40.616,40.616,0,1,0,83.232,42.616,40.631,40.631,0,0,0,42.616,2ZM38.555,74.825A32.446,32.446,0,0,1,10.123,42.616a32.972,32.972,0,0,1,.853-7.27L30.431,54.8v4.062a8.147,8.147,0,0,0,8.123,8.123ZM66.58,64.508a8.058,8.058,0,0,0-7.717-5.646H54.8V46.678a4.074,4.074,0,0,0-4.062-4.062H26.37V34.493h8.123a4.074,4.074,0,0,0,4.062-4.062V22.308h8.123A8.147,8.147,0,0,0,54.8,14.185V12.52A32.421,32.421,0,0,1,66.58,64.508Z" transform="translate(-2 -2)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="164.838" height="190.339" viewBox="0 0 164.838 190.339">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke-miterlimit: 10;
+        stroke-width: 11px;
+      }
+
+      .cls-1, .cls-2 {
+        stroke: #fff;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="textIcon" transform="translate(-968.698 -288.022)">
+    <path id="Path_152" data-name="Path 152" class="cls-1" d="M520.666,778.772l-76.919-44.409V645.544l76.919-44.409,76.919,44.409v88.819Z" transform="translate(530.451 -306.762)"/>
+    <g id="Group_223" data-name="Group 223" transform="translate(-507.698 -43.399)">
+      <path id="Path_151" data-name="Path 151" class="cls-2" d="M1184.3,509.169h-6.831V498.437h47.367v10.733h-6.775v-3.617h-13.493l-.112,50.342h6.943v7.234h-20.548v-7.234h6.887l.112-50.342H1184.3Z" transform="translate(346.534 -105.996)"/>
+      <path id="Path_153" data-name="Path 153" class="cls-2" d="M1182.178,505.483h-4.712v-7.047h32.674v7.047h-4.673v-2.375h-9.308l-.077,33.053h4.789v4.75H1186.7v-4.75h4.75l.077-33.053h-9.347Z" transform="translate(385.492 -83.779)"/>
+    </g>
+  </g>
+</svg>

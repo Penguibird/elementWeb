@@ -32,10 +32,10 @@ if (isClient) {
         window.mySwipe.on('slideChange', e => {
             setSelectedControl(selectedSlide, e.realIndex);
         });
-        window.mySwipe.on('transitionEnd', e => {
-            showPortfolio(selectedPortfolio, e.realIndex);
-        })
-        showPortfolio(0, 0)
+        // window.mySwipe.on('transitionEnd', e => {
+        //     showPortfolio(selectedPortfolio, e.realIndex);
+        // })
+        // showPortfolio(0, 0)
 
         document.querySelector('.media-info .carousel-control-next').addEventListener('click', e => { window.mySwipe.slideNext() })
         document.querySelector('.media-info .carousel-control-prev').addEventListener('click', e => { window.mySwipe.slidePrev() })
@@ -88,9 +88,9 @@ if (isClient) {
             window.mySwipe.on('slideChange', e => {
                 setSelectedControl(selectedSlide, e.realIndex);
             });
-            window.mySwipe.on('transitionEnd', e => {
-                showPortfolio(selectedPortfolio, e.realIndex);
-            })
+            // window.mySwipe.on('transitionEnd', e => {
+            //     showPortfolio(selectedPortfolio, e.realIndex);
+            // })
         }
         baseOverlayInnerHTML = document.getElementById("overlay").innerHTML;
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -116,7 +116,7 @@ if (isClient) {
             closeNavigation();
         })
         const closeNavigation = () => {
-            if (vw < 9000) {
+            if (vw < 900) {
                 document.querySelector(".navigation").style.transform = 'translateY(-100%)';
                 window.requestAnimationFrame(() => {
                     document.querySelector(".navigation").style.display = 'none';
@@ -171,9 +171,9 @@ if (isClient) {
 
 
 
-        document.querySelector(".image-portfolio-predmety").addEventListener('click', e => {
-            toggle2(true)
-        })
+        // document.querySelector(".image-portfolio-predmety").addEventListener('click', e => {
+        //     toggle2(true)
+        // })
         const toggle2 = bool => {
             document.getElementById("overlay2").style.display = bool ? 'grid' : 'none';
             document.getElementById("overlay2").style.opacity = bool ? 1 : 0;
@@ -188,8 +188,11 @@ if (isClient) {
 
 
 
-
-
+        document.querySelectorAll('.navigation .hexagon-icon').forEach(el => {
+            el.addEventListener('mouseenter', e=> document.querySelector('.navigation-wrapper').classList.add('hovered'))
+            // el.addEventListener('onmouseover', e=> document.querySelector('.navigation-wrapper').classList.add('hovered'))
+        })
+        document.querySelector('.navigation-wrapper').addEventListener('mouseleave', e=> document.querySelector('.navigation-wrapper').classList.remove('hovered'))
 
 
 
@@ -245,14 +248,14 @@ if (isClient) {
         if (!bool) document.getElementById("overlay").innerHTML = baseOverlayInnerHTML;
     }
 
-    const showPortfolio = (from, to) => {
-        selectedPortfolio = to;
-        console.log("showing portfolio", from, to)
-        document.querySelector(`.slide-${from} .portfolio`).style.opacity = 0;
-        document.querySelector(`.slide-${from} .portfolio`).style.transform = 'translateY(50px)';
-        document.querySelector(`.slide-${to} .portfolio`).style.opacity = 1;
-        document.querySelector(`.slide-${to} .portfolio`).style.transform = 'translateY(0px)';
-    }
+    // const showPortfolio = (from, to) => {
+    //     selectedPortfolio = to;
+    //     console.log("showing portfolio", from, to)
+    //     document.querySelector(`.slide-${from} .portfolio`).style.opacity = 0;
+    //     document.querySelector(`.slide-${from} .portfolio`).style.transform = 'translateY(50px)';
+    //     document.querySelector(`.slide-${to} .portfolio`).style.opacity = 1;
+    //     document.querySelector(`.slide-${to} .portfolio`).style.transform = 'translateY(0px)';
+    // }
 
 
 

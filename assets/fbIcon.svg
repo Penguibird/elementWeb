@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="164.838" height="190.339" viewBox="0 0 164.838 190.339">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 11px;
+      }
+    </style>
+  </defs>
+  <g id="fbIcon" transform="translate(-1477.537 -163.331)">
+    <path id="facebook" class="cls-1" d="M198.962,230.827V191h13.322l2.008-15.531h-15.33v-9.908q0-3.749,1.573-5.623t6.125-1.874l8.167-.067V144.134a89.74,89.74,0,0,0-11.916-.6q-9.1,0-14.561,5.356t-5.456,15.13v11.448H169.506V191h13.389v39.832Z" transform="translate(1367.79 71.321)"/>
+    <path id="Path_144" data-name="Path 144" class="cls-2" d="M520.666,778.772l-76.919-44.409V645.544l76.919-44.409,76.919,44.409v88.819Z" transform="translate(1039.29 -431.454)"/>
+  </g>
+</svg>

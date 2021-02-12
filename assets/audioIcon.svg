@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="164.838" height="190.339" viewBox="0 0 164.838 190.339">
+  <defs>
+    <style>
+      .cls-1, .cls-3 {
+        fill: none;
+      }
+
+      .cls-1 {
+        opacity: 0.1;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 11px;
+      }
+    </style>
+  </defs>
+  <g id="audioIcon" transform="translate(-978.537 -172.331)">
+    <g id="music" transform="translate(1018.469 225.013)">
+      <path id="Path_136" data-name="Path 136" class="cls-1" d="M0,0H84.974V84.974H0Z"/>
+      <path id="Path_137" data-name="Path 137" class="cls-2" d="M34.865,1A31.868,31.868,0,0,0,3,32.865V57.649A10.607,10.607,0,0,0,13.622,68.271H24.243V39.946H10.081V32.865a24.784,24.784,0,1,1,49.568,0v7.081H45.487V68.271H56.109A10.608,10.608,0,0,0,66.73,57.649V32.865A31.868,31.868,0,0,0,34.865,1Z" transform="translate(7.622 2.541)"/>
+    </g>
+    <path id="Path_142" data-name="Path 142" class="cls-3" d="M520.666,778.772l-76.919-44.409V645.544l76.919-44.409,76.919,44.409v88.819Z" transform="translate(540.29 -422.454)"/>
+  </g>
+</svg>

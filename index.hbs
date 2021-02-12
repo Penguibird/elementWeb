@@ -132,11 +132,9 @@
                 <div class="heading-wrapper">
                     <h1>Najděme společně nejoptimálnější formu Vaší&nbsp;bussines&nbsp;komunikace</h1>
                     <p class="first"><strong>Kdo je Váš typický zákazník?</strong> Jak s ním komunikovat? Jak sdělit
-                        benefity? Které
-                        kanály zvolit?
-                        Jak
-                        budovat lovebrand? Jak dát značce duši? Souvisí to s firemní kulturou?
-                        Svět se mění a s tím i <strong>vnímání trhu</strong>.</p>
+                        benefity? Proč budovat lovebrand? Lze dát značce duši? Souvisí to s firemní kulturou?
+                        <br /> <strong>Svět se mění a s tím i vnímání trhu</strong>.
+                    </p>
                 </div>
                 <div class="text-wrapper">
                     <h2>Projektové řízení</h2>
@@ -145,23 +143,23 @@
                             úsporné, efektivní.</strong> </p>
                     <h2>Vše začíná myšlenkou</h2>
                     <p>Každý máme jiný úhel pohledu, proto je svět <strong>barevný</strong>. V komunikaci se zákazníkem
-                        ale hledáme
-                        jeho
-                        focus – pak potřebným informacím rozumí. Nadchněte ho, sdělte mu svůj příběh, zaujměte,
-                        řekněte
-                        mu, jak je pro Vás důležitý. <strong>K cíli vede mnoho cest, ale cíl je jen jeden!</strong></p>
+                        ale hledáme jeho focus. Pak potřebným informacím rozumí.<br /> Nadchněte ho, sdělte mu svůj
+                        příběh, zaujměte,
+                        řekněte mu, jak je pro Vás důležitý.
+                    </p>
+                    <p><strong>K cíli vede mnoho cest, ale cíl je jen jeden!</strong></p>
                 </div>
             </section>
             <section class="media-info" id="mediaInfo">
                 <div class="hexagon-controls hexagon-card-row-wrapper dark-text">
                     {{#each mediaCategoriesControls}}
-                    <button
+                    <a href="#mediaInfo"
                         class="hexagon-card carousel-control carousel-control-button-{{@index}} {{#if this.first}} selected {{/if}}">
                         <img class="" src="{{this.img}}" alt="radio">
                         <div class="text-wrapper">
                             <h3 class="{{{this.color}}}">{{{this.title}}} </h3>
                         </div>
-                    </button>
+                    </a>
                     {{/each}}
                 </div>
                 <div class="carousel-wrapper">
@@ -175,76 +173,864 @@
                     </button>
                     <div id="slider" class="swiper-container">
                         <div class="swiper-wrapper">
-                            {{#each mediaCategories as |m|}}
+
+                            {{!-- --}}
+                            {{!-- Trad Media --}}
+                            {{!-- --}}
+
                             <!-- Inside a carousel slide -->
-                            <div class="swiper-slide carousel-slide slide-{{@index}}">
-                                <h2 class="{{{m.color}}}">{{m.title}}</h2>
-                                <!-- Wide list on the bottom, spanning the whole grid containing a list of possible products -->
+                            <div class="swiper-slide carousel-slide slide-0">
+                                <h2 class="deep-purple">Tradiční média</h2>
+                                <!-- Wide list on the top, spanning the whole grid containing a list of possible products -->
                                 <div class="list">
-                                    {{!-- <h3>Potřebujete:</h3> --}}
-                                    <p class="{{{m.color}}}"> {{{m.list}}}
+                                    <p class=""> kampaň v rádiích <span class="bullet">•</span> načasování <span
+                                            class="bullet">•</span> plánování včetně strategie komunikace <span
+                                            class="bullet">•</span> scénář reklamních spotů <span
+                                            class="bullet">•</span> castingu <span class="bullet">•</span> realizace
+                                        <span class="bullet">•</span> zvukové logo <span class="bullet">•</span>
+                                        televizní kampaň <span class="bullet">•</span> sponzoring <span
+                                            class="bullet">•</span> nákup včetně plánování
                                     </p>
                                 </div>
+                                <img src="./assets/soundwave.jpg" alt="" class="wide-photo">
                                 <!-- Main text paragraph about the specific media -->
-                                <div class="main-text-wrapper {{{m.color}}}">
-                                    {{#each m.mainText}}
-                                    {{#if this.isHeading}}
-                                    <h3 class="{{{m.color}}}">{{{this.text}}}</h3>
-                                    {{else}}
+                                <div class="main-text-wrapper deep-purple">
+                                    <img src="./assets/tradMedia.svg" alt="Icon" class="big-icon">
+                                    <h3 class="">Rádio</h3>
                                     <p class="main-text">
-                                        {{{this.text}}}
+                                        Chcete umocnit a povýšit Váš brand? <b>Rádio přenáší emoce, zvuky,
+                                            podporuje představivost</b> a je všude všudypřítomné. Patří mezi nadlinková
+                                        média, <b>buduje značku</b>. <br />
+                                        Práce v rádiu a pro rádia mě provází celým životem. Zkušenosti promítám do
+                                        plánování kampaní i přípravy spotů. Nejde totiž jen o sdělení. <b>Nastavení
+                                            komunikace v
+                                            rádiu vypovídá o firmě mnohem víc.</b> Vím, jak je pro výsledek kampaně
+                                        důležitý dobře
+                                        připravený a profesionálně zpracovaný spot. Velmi doporučuji i zvukovou
+                                        identifikaci –
+                                        zvukové logo. <b>Chcete přece, ať Vás poznají…</b>
                                     </p>
-                                    {{/if}}
-                                    {{/each}}
                                 </div>
                                 <!-- Portfolio -->
-                                <div class="portfolio hexagon-card-row-wrapper hexagon-portfolio dark-text">
-                                    {{#each m.portfolio}}
-                                    <!-- Hexagon card - one portfolio item -->
-                                    <div class="hexagon-card">
-                                        <div class="icon-wrapper">
-                                            <img src="{{this.img}}" alt="headset icon">
+                                <div class="portfolio">
+                                    <div class="portfolio-item">
+                                        <h3 class="deep-purple">Zvukové logo</h3>
+                                        <hr class="deep-purple">
+                                        <div class="portfolio-paragraph">
+                                            <a class="portfolio-link music" data-src="">
+                                                {{!-- //FIXME MISSING LINK --}}
+                                                <img src="./assets/audioIcon.svg" alt=""
+                                                    class="portfolio-link-icon music">
+                                                <p class="icon-link play">
+                                                    play
+                                                </p>
+                                            </a>
+                                            <p class="deep-purple-a">
+                                                <b>Koupelny Jas</b> – z původního Cup songu se znělka
+                                                časem vyloupla do modernějšho soundu. Má svou rockovou a drum verzi.
+                                                Někteří
+                                                tvrdí, že se nedá dostat z hlavy…
+                                            </p>
                                         </div>
-                                        <div class="text-wrapper">
-                                            <h3>{{this.heading}} </h3>
-                                            <div class="text-clipper">
-                                                <div class="before"></div>
-                                                <div class="after"></div>
-                                                <p class="{{{m.color}}}-a" style="color: #4c4c4c;">{{{this.text}}} </p>
-                                            </div>
+                                        <div class="portfolio-paragraph">
+                                            <a class="portfolio-link music"
+                                                data-src="api.soundcloud.com/tracks/980566585&">
+                                                <img src="./assets/audioIcon.svg" alt=""
+                                                    class="portfolio-link-icon music">
+                                                <p class="icon-link play">
+                                                    play
+                                                </p>
+                                            </a>
+                                            <p class="deep-purple-a">
+                                                <b>Malý a Velký</b> – někdy se představa o zvuku klientovi špatně
+                                                interpretuje. Toto zvukové logo vzniklo bez souhlasu klienta. Naštěstí
+                                                se
+                                                líbilo! Dokonce
+                                                i porotě celostátní soutěže rozhlasových spotů.
+                                            </p>
+                                        </div>
+                                        <div class="portfolio-paragraph"><a class="portfolio-link music" data-src="">
+                                                {{!-- //FIXME MISSING LINK --}}
+
+                                                <img src="./assets/audioIcon.svg" alt=""
+                                                    class="portfolio-link-icon music">
+                                                <p class="icon-link play">
+                                                    play
+                                                </p>
+                                            </a>
+                                            <p class="deep-purple-a">
+                                                <b>Ski aréna Karlov</b> – jéé, jéé…taky byste lyžovali?
+                                            </p>
+                                        </div>
+                                        <img src="./assets/tradMedia_photo2.jpg" alt="" class="portfolio-image">
+                                    </div>
+                                    <div class="portfolio-item">
+                                        <h3 class="deep-purple">Spoty</h3>
+                                        <hr class="deep-purple">
+                                        <div class="portfolio-paragraph"><a class="portfolio-link music"
+                                                data-src="api.soundcloud.com/tracks/979262794">
+                                                <img src="./assets/audioIcon.svg" alt=""
+                                                    class="portfolio-link-icon music">
+                                                <p class="icon-link play">
+                                                    play
+                                                </p>
+                                            </a>
+                                            <p class="deep-purple-a">
+                                                <b>Koupelny JaS</b> budují svůj brand dlouhodobě přes éter
+                                                zejména celoplošných rádií. Tato varianta aktuálního spotu je hudebně
+                                                obohacena o prvky rocku.
+                                                Hudba je autorská, klient ji využívá pod veškerým potřebným audio i
+                                                video
+                                                obsahem.
+                                            </p>
+                                        </div>
+                                        <div class="portfolio-paragraph"><a class="portfolio-link music"
+                                                data-src="api.soundcloud.com/tracks/980570656">
+                                                <img src="./assets/audioIcon.svg" alt=""
+                                                    class="portfolio-link-icon music">
+                                                <p class="icon-link play">
+                                                    play
+                                                </p>
+                                            </a>
+                                            <p class="deep-purple-a">
+                                                <b>Nejči nábytek</b> nabízí vedle vlastních <b>Nejči design sedaček</b>
+                                                také
+                                                italský
+                                                sortiment. Volba podpořit originalitu a exkluzivitu značky Vivaldiho
+                                                Stormem
+                                                byla jasná. Netradiční crossoverová úprava popové houslistky Lucie
+                                                Klasek
+                                                navíc podtrhuje dynamičnost brandu, moderní pojetí showroomů i
+                                                atraktivitu
+                                                sortimentu. Voiceover – Jan Šťastný
+                                            </p>
+                                        </div>
+                                        <div class="portfolio-paragraph"><a class="portfolio-link music"
+                                                data-src="api.soundcloud.com/tracks/980566585">
+                                                <img src="./assets/audioIcon.svg" alt=""
+                                                    class="portfolio-link-icon music">
+                                                <p class="icon-link play">
+                                                    play
+                                                </p>
+                                            </a>
+                                            <p class="deep-purple-a">
+                                                <b>Malý a Velký</b> – ukázka práce se zvukovým logem v produktovém
+                                                spotu.
+                                                Jednotná identita v průběhu času vytváří nezaměnitelnost a jedinečnost
+                                                vnímání brandu a zapisuje do podvědomí – v tomot případě informaci: Na
+                                                Fordy
+                                                jsme tu MY!
+                                            </p>
+                                        </div>
+                                        <div class="portfolio-paragraph"><a class="portfolio-link music"
+                                                data-src="api.soundcloud.com/tracks/980585413">
+                                                <img src="./assets/audioIcon.svg" alt=""
+                                                    class="portfolio-link-icon music">
+                                                <p class="icon-link play">
+                                                    play
+                                                </p>
+                                            </a>
+                                            <p class="deep-purple-a">
+                                                <b>Obchody 24</b> – jeden ze seriálu úspěšné série produktových
+                                                rádiových
+                                                spotů. Originální projev Jana Dolanského dává značce jednoznačnou tvář.
+                                                Správný casting bývá velkou měrou úspěchu.
+                                            </p>
                                         </div>
                                     </div>
-                                    {{/each}}
+                                </div>
+                                <div class="main-text-wrapper">
+                                    <img src="./assets/televize.svg" alt="Icon" class="big-icon">
+
+                                    <h3 class="">Televize</h3>
+                                    <p class="main-text deep-purple-a">
+                                        Je čas se blýsknout? Jste připraveni posunout brand, službu či
+                                        produkt mílovými kroky? <b>Televize je stále velice efektivním komunikačním
+                                            kanálem.</b> <br /> Plánování, nákup i příprava šotů vychází z
+                                        předem definovaného cíle. <b>V rámci spolupráce s produkčními studii není
+                                            problém stát se
+                                            součástí některých populárních pořadů,</b> soutěžit s diváky či prezentovat
+                                        produkt.
+                                    </p>
+                                </div>
+                                <div class="second-portfolio portfolio">
+                                    <div class="portfolio-item">
+                                        <h3 class="deep-purple">Televizní šoty, sponzoring</h3>
+                                        <hr class="deep-purple">
+                                        <div class="portfolio-paragraph"><a class="portfolio-link youtube"
+                                                data-src="https://www.youtube.com/embed/videoseries?list=PL_aEqRRwrwVuXl5tRUaVqI3ME_VksIRkt">
+                                                <img src="./assets/youtubeIcon.svg" alt=""
+                                                    class="portfolio-link-icon youtube">
+                                                <p class="icon-link play">
+                                                    play
+                                                </p>
+                                            </a>
+                                            <p class="deep-purple-a">
+                                                <b>Koupelny JaS</b> - série tří image televizních šotů pro sponzoring
+                                                pořadu
+                                                Jak se staví sen na TV prima. Nízkého rozpočtu jsme dosáhli natáčením
+                                                přímo
+                                                v koupelnovém studiu a malým štábem.
+                                            </p>
+                                        </div>
+
+                                        <div class="portfolio-image-wrapper">
+                                            <a class="portfolio-link youtube"
+                                                data-src="https://www.youtube.com/embed/videoseries?list=PL_aEqRRwrwVuXl5tRUaVqI3ME_VksIRkt&index=3">
+                                                {{!-- //FIXME Wrong links --}}
+                                                <img src="./assets/koupJas1.png" alt="">
+                                            </a>
+                                            <a class="portfolio-link youtube"
+                                                data-src="https://www.youtube.com/embed/videoseries?list=PL_aEqRRwrwVuXl5tRUaVqI3ME_VksIRkt&index=2">
+                                                <img src="./assets/koupJas2.png" alt=>
+                                            </a>
+                                            <a class="portfolio-link youtube"
+                                                data-src="https://www.youtube.com/embed/videoseries?list=PL_aEqRRwrwVuXl5tRUaVqI3ME_VksIRkt&index=1">
+                                                <img src="./assets/koupJas3.png" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
 
                                 </div>
                             </div>
-                            {{/each}}
+
+
+                            <!-- Inside a carousel slide -->
+
+                            {{!-- --}}
+                            {{!-- Digi Media --}}
+                            {{!-- --}}
+
+
+                            <div class="swiper-slide carousel-slide slide-1">
+                                <h2 class="light-blue">Digitální média</h2>
+                                <!-- Wide list on the top, spanning the whole grid containing a list of possible products -->
+                                <div class="list">
+                                    <p class=""> RTB Display a FB bannery <span class="bullet">•</span> prospekting a
+                                        retargeting <span class="bullet">•</span> brandink na klik <span
+                                            class="bullet">•</span> SEO <span class="bullet">•</span> PPC <span
+                                            class="bullet">•</span> PR články <span class="bullet">•</span> obsah <span
+                                            class="bullet">•</span> video na FB,YT <span class="bullet">•</span>
+                                        spoznzorované příspěvky <span class="bullet">•</span> spolupráce s influencery
+                                    </p>
+                                </div>
+                                <img src="./assets/digiMedia_photo2.jpg" alt="" class="wide-photo">
+                                <!-- Main text paragraph about the specific media -->
+                                <div class="main-text-wrapper light-blue">
+                                    <img src="./assets/DigiMedia.svg" alt="Smartphone icon" class="big-icon">
+                                    <h3 class="">Online marketing</h3>
+                                    <p class="main-text">
+                                        Svět online marketingu zásadně změnilo programatické plánování. <b>Najdou si
+                                            nás!</b> Všichni to známe. <b>Zanecháváme stopy, které využívají správci
+                                            kampaní a cíleně servírují nabídky.</b>
+                                        Umíme se pohybovat v 98% on-line prostředí a trefit zákazníky s velkou
+                                        přesností.
+                                        Pro většinu segmentů je online nezastupitelný a do komunikačního mixu prostě
+                                        patří. Navíc, dobře zanalyzovaná kampaň <b>umí najít odpovědi na mnoho otázek o
+                                            konzumentech.</b>
+                                    </p>
+                                    <h3 class="">Sociální média</h3>
+                                    <p class="main-text">
+                                        Facebook, Instagram, Youtube! <b>Tvrdí někdo, že tam nemá zákazníky? OMYL!</b>
+                                        Jen najít způsob, jak se jim vetřít do přízně, mluvit jejich řečí a trefit se do
+                                        myšlení a vkusu – co největší části z nich!
+                                        <b>A co obecně fanoušci chtějí?</b> Kámoše – ne mentory! Inspiraci – ne obchodní
+                                        tlak!
+                                        A hlavně – připravte se na to, že <b>budování vztahu chce čas!</b> Jako v
+                                        životě.
+                                    </p>
+
+                                </div>
+                                <div class="portfolio">
+                                    <div class="portfolio-item">
+                                        <h3 class="light-blue">Online marketing</h3>
+                                        <hr class="light-blue">
+                                        <div class="portfolio-paragraph"><a class="portfolio-link image"
+                                                data-src="./assets/portfolio/Brylex.gif">
+                                                <img src="./assets/imageIcon.svg" alt=""
+                                                    class="portfolio-link-icon image">
+                                                <p class="icon-link open">
+                                                    open
+                                                </p>
+                                            </a>
+                                            <p class="light-blue-a">
+                                                <b>Optika Brylex</b> – sada bannerů pro RTB Display a FB Display kampaň.
+                                                Příprava
+                                                vícero typů barev či textových mutací je správnou volbou. Počáteční
+                                                zapojení
+                                                všech bannerů do kampaně postupně vyselektuje ty úspěšnější. Online
+                                                marketing totiž poskytuje okamžitou interakci a uživatelé sami
+                                                rozhodnou,
+                                                které zpracování informace je pro ně přijatelnější.
+                                            </p>
+                                        </div>
+                                        <div class="portfolio-paragraph"><a class="portfolio-link image"
+                                                data-src="./assets/portfolio/Edyn.gif">
+                                                <img src="./assets/imageIcon.svg" alt=""
+                                                    class="portfolio-link-icon image">
+                                                <p class="icon-link open">
+                                                    open
+                                                </p>
+                                            </a>
+                                            <p class="light-blue-a">
+                                                <b>MŠ EDIN</b> – bannery na web a pro FB kampaň. Pozvat rodiče na
+                                                prohlídku
+                                                školky
+                                                či dny otevřených dveří lze i touto cestou. 170 tisíc plánovaných
+                                                impresí /
+                                                zobrazení / přivedlo na stránky 2300 uživatelů – zájemců z řad rodičů.
+                                            </p>
+                                        </div>
+                                        <div class="portfolio-paragraph"><a class="portfolio-link image"
+                                                data-src="./assets/portfolio/bazar.gif">
+                                                <img src="./assets/imageIcon.svg" alt=""
+                                                    class="portfolio-link-icon image">
+                                                <p class="icon-link open">
+                                                    open
+                                                </p>
+                                            </a>
+                                            <p class="light-blue-a"><b>Bazar lesní techniky</b> – Takto vypadají bannery
+                                                pro
+                                                RTB Display a FB Display kampaň pro klienta, jehož cílovými zákazníci
+                                                jsou
+                                                těžařské firmy. Intuicenás vedla správným směrem. Stroje i prostředí
+                                                musí
+                                                vypadat reálně. Když se kácí les, padají totiž třísky…a lítá bahno.</p>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-item">
+                                        <h3 class="light-blue">Sociální Média</h3>
+                                        <hr class="light-blue">
+                                        <div class="portfolio-paragraph"><a class="portfolio-link youtube"
+                                                data-src="https://www.youtube.com/watch?v=0UCv0jNCBuU">
+                                                <img src="./assets/youtubeIcon.svg" alt=""
+                                                    class="portfolio-link-icon youtube">
+                                                <p class="icon-link play">
+                                                    play
+                                                </p>
+                                            </a>
+                                            <p class="light-blue-a">
+                                                <b>Nejči design</b> - při natáčení materiálu pro prezentaci showroomů
+                                                jsme
+                                                cíleně pořídili další záběry. Spoustu záběrů. Rádi jsme využili
+                                                potenciálu a
+                                                vytvořili při jednom kontent na sociální média.
+
+                                            </p>
+                                        </div>
+                                        <div class="portfolio-paragraph">
+                                            <a class="portfolio-link facebook"
+                                                data-src="https://www.facebook.com/JaSkoupelny/?view_public_for=525219261202067f">
+                                                <img src="./assets/fbIcon.svg" alt=""
+                                                    class="portfolio-link-icon facebook">
+                                                <p class="icon-link open">
+                                                    open
+                                                </p>
+                                            </a>
+                                            <p class="light-blue-a">
+                                                <b>Koupelny JaS</b> jsou na sociálních sítích nováčky. Cílem je
+                                                informovat o
+                                                novinkách, povedených realizacích, představovat vzorové koupelny v
+                                                showroomech a přinášet ukázky trendů, které avizují designéři a
+                                                architekti.
+                                            </p>
+                                        </div>
+                                        <div class="portfolio-paragraph"><a class="portfolio-link facebook"
+                                                data-src="https://www.facebook.com/BazarLesniTechniky/">
+                                                <img src="./assets/fbIcon.svg" alt=""
+                                                    class="portfolio-link-icon facebook">
+                                                <p class="icon-link open">
+                                                    open
+                                                </p>
+                                            </a>
+                                            <p class="light-blue-a"><b>Facebook Bazaru lesní techniky</b> dokázal, co
+                                                zmůže
+                                                fenomén
+                                                komunity. Facebooková stránka vznikla v létě 2020 a okamžitě přilákala
+                                                fanoušky, kteří tak vehementně sdíleli příspěvky s nabízenými stroji, že
+                                                se
+                                                stal FB největším prodejním kanálem. Správná příprava příspěvků,
+                                                dostatečná
+                                                podpora, SEO, přehledný web, odkazování, příkladný informační servis ze
+                                                strany majitelů a jejich rovný přístup – a funguje. <b>Nikdy to není jen
+                                                    náhoda.</b></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="main-text-wrapper">
+                                    <img src="./assets/digiMedia2.svg" alt="" class="big-icon">
+                                    <h3 class="">Tvorba webů</h3>
+                                    <p class="main-text light-blue-a">
+                                        Tvrorba webů má své fáze! Příprava zadání, nastavení cílů, struktura, textace,
+                                        web design a samotné programování.
+                                        <b>Je to proces, kdy se z ničeho narodí něco a hraje významnou roli.</b> Ať už
+                                        je web prodejním či pouze informačním kanálem.
+                                    </p>
+                                </div>
+                                <div class="portfolio">
+
+                                    <div class="portfolio-item">
+                                        <h3 class="light-blue">Tvorba webů</h3>
+                                        <hr class="light-blue">
+                                        <div class="portfolio-paragraph"><a class="portfolio-link facebook"
+                                                data-src="https://skimysak.cz">
+                                                <img src="./assets/webIcon.svg" alt="" class="portfolio-link-icon web">
+                                                <p class="icon-link open">
+                                                    open
+                                                </p>
+                                            </a>
+                                            <p class="light-blue-a">
+                                                <b>Ski Myšák</b> – Areál Myšák je součástí resortu SKI aréna Karlov pod
+                                                Pradědem. Na stránce je nejvíc navštěvováno aktuální počasí a atraktivní
+                                                jsou online pohledy přes webkamery.
+                                            </p>
+                                        </div>
+                                        <img src="./assets/portfolio/skimysak.jpg" alt="Screenshot webu skimysak.cz"
+                                            class="portfolio-image skimysak">
+                                    </div>
+                                    <div class="portfolio-image-wrapper digiMedia-photo">
+                                        <img src="./assets/code1.jpg" class="digiMedia-photo" alt="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{!-- --}}
+                            {{!-- COPYWRITING --}}
+                            {{!-- --}}
+
+                            <div class="swiper-slide carousel-slide slide-0">
+                                <h2 class="pink">Copywriting</h2>
+                                <!-- Wide list on the top, spanning the whole grid containing a list of possible products -->
+                                <div class="list">
+                                    <p class=""> Tisková zpráva <span class="bullet">•</span> PR článek <span
+                                            class="bullet">•</span> scénář reklamního spotu <span
+                                            class="bullet">•</span> komentář k videoprezentaci <span
+                                            class="bullet">•</span> textace webu
+                                    </p>
+                                </div>
+                                <img src="./assets/copywriting_photo1.jpg" alt="" class="wide-photo">
+                                <!-- Main text paragraph about the specific media -->
+                                <div class="main-text-wrapper pink">
+                                    <img src="./assets/Copywriting.svg" alt="" class="big-icon">
+                                    <h3 class="">Copywriting</h3>
+                                    <p class="main-text">
+                                        Slovo má obrovskou moc. Potěší, povzbudí, urazí, rozpláče, přesvědčí i
+                                        manipuluje. <b>Slovu předchází myšlenka.</b>
+                                        Věříte v sílu myšlenky? <b>Potom pozor na to, co říkáme a píšeme.</b> V
+                                        komunikaci se zákazníkem <b>hledáme přesnost vyjadřování, efektivitu, styl,
+                                            formu a jeho pohled.</b>
+                                        KOMU-nikace. Vidíte? Nedůležitější v komunikaci je <b>KOMU je sdělení
+                                            určeno.</b> Občas přirovnávám marketingovou komunikaci k radě profesora
+                                        Matějíčka týkající se výchovy dětí. <b>Něco se nesmí, něco se musí a o zbytku
+                                            můžeme diskutovat.</b>
+                                        Ano, určitá pravidla je potřeba ctít.
+                                    </p>
+                                </div>
+                                <div class="portfolio">
+                                    <div class="portfolio-item">
+
+                                        <h3 class="pink">PR články, blogy</h3>
+                                        <hr class="pink">
+                                        <div class="portfolio-paragraph">
+                                            <a class="portfolio-link docs"
+                                                data-src="assets\\portfolio\\Jak vybrat správnou.docx">
+                                                <img src="./assets/textIcon.svg" alt=""
+                                                    class="portfolio-link-icon docs">
+                                                <p class="icon-link open">
+                                                    open
+                                                </p>
+                                            </a>
+                                            <p class="pink-a">
+                                                <b>Nejči nábytek</b>Občas je fajn mít na webu pár dobře míněných rad.
+                                                Shrnout základní pravdila,
+                                                která zákazníky zorientují při výběru, připomenout, co prioritně
+                                                zohlednit,
+                                                na jaké otázky si odpovědět, aby představa byla jasnější.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-item">
+
+                                        <h3 class="pink">Interwiew</h3>
+                                        <hr class="pink">
+                                        <div class="portfolio-paragraph">
+                                            <a class="portfolio-link docs"
+                                                data-src="assets\\portfolio\\Interview popová Lucie Klasek.pdf">
+                                                <img src="./assets/textIcon.svg" alt=""
+                                                    class="portfolio-link-icon docs">
+                                                <p class="icon-link open">
+                                                    open
+                                                </p>
+                                            </a>
+                                            <p class="pink-a">
+                                                <b>Lucie Klasek – popová houslistka</b>
+                                                Promo články k propagaci umělců patří. Většinou se píše o jejich
+                                                aktuálních projektech, posunech, plánech… No, teď jsou už delší dobu u
+                                                ledu.
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-item">
+
+                                        <h3 class="pink">Tisková zpráva</h3>
+                                        <hr class="pink">
+                                        <div class="portfolio-paragraph">
+                                            <a class="portfolio-link docs"
+                                                data-src="assets\\portfolio\\The Stringz Ostrava TZ.docx">
+                                                <img src="./assets/textIcon.svg" alt=""
+                                                    class="portfolio-link-icon docs">
+                                                <p class="icon-link open">
+                                                    open
+                                                </p>
+                                            </a>
+                                            <p class="pink-a">
+                                                <b>The Stringz v Ostravě</b>
+                                                Tisková zpráva je oficiální sdělení, které v nejlepším případě zařadí
+                                                do obsahu co nejvíce novinářů. K tomu je potřeba umět nahlížet do jejich
+                                                podvědomí, takzvaně jim vidět do hlav, přát si a doufat. Ale opravdu!
+                                                Nejdůležitější v tiskové zprávě patří do titulku a perexu, až pak se
+                                                postupně doplňují a rozvíjejí další informace a kontext.
+
+
+                                            </p>
+                                        </div>
+                                        <img src="./assets/copywriting_photo2.jpg" alt="" class="portfolio-image">
+                                    </div>
+                                    <div class="portfolio-item">
+                                        <h3 class="pink">Scénáře reklamních rozhlasových spotů
+                                        </h3>
+                                        <hr class="pink">
+                                        <div class="portfolio-paragraph">
+                                            <a class="portfolio-link music"
+                                                data-src="api.soundcloud.com/tracks/980583994">
+                                                <img src="./assets/audioIcon.svg" alt=""
+                                                    class="portfolio-link-icon music">
+                                                <p class="icon-link play">
+                                                    play
+                                                </p>
+                                            </a>
+                                            <p class="pink-a">
+                                                <b>Pruniwerk</b> – Je fajn, když náborová kampaň zároveň prozradí víc o
+                                                firmě, což v případě rádia lze hezky dosáhnout. Také je třeba ohlídat
+                                                jasně
+                                                definované benefity a podmínky nástupu. Když je o Vás slyšet,
+                                                prezentujte se v souladu s Vaší firemní kulturou.
+                                            </p>
+                                        </div>
+                                        <div class="portfolio-paragraph">
+                                            <a class="portfolio-link docs" data-src="assets\\portfolio\\SEN final.docx">
+                                                <img src="./assets/textIcon.svg" alt=""
+                                                    class="portfolio-link-icon docs">
+                                                <p class="icon-link open">
+                                                    open
+                                                </p>
+                                            </a>
+                                            <p class="pink-a">
+                                                <b>Hotel SEN</b>– scénář reklamních rozhlasových spotů, které mají
+                                                stejnou kostru, stejný hlas a podkres, ale každý komunikuje jiný
+                                                produkt. V tomto případě svatby a firemní akce.
+                                            </p>
+                                        </div>
+                                        <div class="portfolio-paragraph">
+                                            <a class="portfolio-link docs"
+                                                data-src="assets\\portfolio\\Irský kotlet -Chodura - final.docx">
+                                                <img src="./assets/textIcon.svg" alt=""
+                                                    class="portfolio-link-icon docs">
+                                                <p class="icon-link open">
+                                                    open
+                                                </p>
+                                            </a>
+                                            <p class="pink-a">
+                                                <b>Beskydské uzeniny Chodura</b> – produktový spot, jeden z mnoha, které
+                                                vypovídají o kvalitě, poctivém přístupu a podněcují chuť na zmíněnou
+                                                delikatesu.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-item">
+                                        <h3 class="pink">Komentáře k videoprezentacím</h3>
+                                        <hr class="pink">
+                                        <div class="portfolio-paragraph">
+                                            <a class="portfolio-link video"
+                                                data-src="https://www.youtube.com/watch?v=0UCv0jNCBuU">
+                                                <img src="./assets/youtubeIcon.svg" alt=""
+                                                    class="portfolio-link-icon video">
+                                                <p class="icon-link play">
+                                                    play
+                                                </p>
+                                            </a>
+                                            <p class="pink-a">
+                                                <b>Sedačky by Nejči design </b> K filmu jsem psala komentář, který
+                                                namlouval jako vše pro Nejči - Honza Šťastný. Příběh sedaček začíná u
+                                                tradičního materiálu, popisuje technologii výroby i benefity, které
+                                                zákazníky zajímají.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-item">
+                                        <img src="./assets/copywriting_photo3.jpg" alt="" class="portfolio-image">
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            {{!-- --}}
+                            {{!-- Produkce --}}
+                            {{!-- --}}
+
+                            <div class="swiper-slide carousel-slide slide-1">
+                                <h2 class="deep-purple">Produkce</h2>
+                                <!-- Wide list on the top, spanning the whole grid containing a list of possible products -->
+                                <div class="list">
+                                    <p class=""> audio spot <span class="bullet">•</span> video šot <span
+                                            class="bullet">•</span> video prezentaci <span class="bullet">•</span>
+                                        content pro sociální média <span class="bullet">•</span> prezentační film <span
+                                            class="bullet">•</span> produktová videa <span class="bullet">•</span>
+                                        reportáž <span class="bullet">•</span> pozvánku - reklamní grafiku - corporate
+                                        indentity - tiskoviny - bannery <span class="bullet">•</span> venkovní reklamu -
+                                        polepy vozového parku
+                                    </p>
+                                </div>
+                                <img src="./assets/produkce_photo1.jpg" alt="" class="wide-photo">
+                                <!-- Main text paragraph about the specific media -->
+                                <div class="main-text-wrapper deep-purple">
+                                    <img src="./assets/Produkce.svg" class="big-icon" alt="">
+                                    <p class="main-text">
+                                        Kreativní cesta od zadání k cíli! Správně vystavěný brief, nápady,
+                                        brainstormingy, různé pohledy, konfrontace.
+                                        SHODA! <b>Sejít se v představě o výsledném produktu. Sejít se v týmu, sejít se s
+                                            klientem.</b> Spolupráce a sdílení myšlenek s kameramany, zvukaři, střihači,
+                                        animátory, grafiky.
+                                        <b>A je to.</b>
+                                    </p>
+                                </div>
+                                <div class="portfolio">
+                                    <div class="portfolio-item">
+                                        <h3 class="deep-purple">Content pro sociální média</h3>
+                                        <hr class="deep-purple">
+                                        <div class="portfolio-paragraph">
+                                            <a class="portfolio-link video" data-src="https://youtu.be/rP4KFWGD4Gg">
+                                                <img src="./assets/youtubeIcon.svg" alt=""
+                                                    class="portfolio-link-icon video">
+                                                <p class="icon-link play">
+                                                    play
+                                                </p>
+                                            </a>
+                                            <p class="deep-purple-a">
+                                                <b>Koupelny JaS</b> Na sociálních médiích je skvělé zařazovat videa.
+                                                Někdy ani jinak nelze
+                                                patřičně představit, co je potřeba. Obraz je tisíc slov a zákazník si
+                                                rychle a jasně udělá představu – například o sérii obkladů METEOR a
+                                                typech sanity.
+                                            </p>
+                                        </div>
+                                        <img src="./assets/produkce_photo2.jpg" alt="" class="portfolio-image">
+                                    </div>
+                                    <div class="portfolio-item">
+                                        <h3 class="deep-purple">Videoprezentace</h3>
+                                        <hr class="deep-purple">
+                                        <div class="portfolio-paragraph">
+                                            <a class="portfolio-link video"
+                                                data-src="https://www.youtube.com/watch?v=q_9khLdS828">
+                                                {{!-- "https://www.youtube.com/watch?v=YxIk86I_Qfk" --}}
+                                                <img src="./assets/youtubeIcon.svg" alt=""
+                                                    class="portfolio-link-icon video">
+                                                <p class="icon-link play">
+                                                    play
+                                                </p>
+                                            </a>
+                                            <p class="deep-purple-a">
+                                                <b>Pars Komponenty</b> Technologická videa nebo také Technologie in
+                                                House
+                                                jsou pro strojní
+                                                a výrobní firmy zárukou spolehlivost. V Parsu se děje vše. Obrábění,
+                                                Ohýbání, Svařování, Lakování, Lepení, vše ve třech jazykových mutacích
+                                            </p>
+                                        </div>
+                                        <div class="portfolio-paragraph">
+                                            <a class="portfolio-link video" data-src="https://youtu.be/uMqG7j4sb40">
+                                                <img src="./assets/youtubeIcon.svg" alt=""
+                                                    class="portfolio-link-icon video">
+                                                <p class="icon-link play">
+                                                    play
+                                                </p>
+                                            </a>
+                                            <p class="deep-purple-a">
+                                                <b>Nejči design - představení showroomů</b> Vyzkoušet sedačku osobně,
+                                                získat zkušenost, mít srovnání, znamená pro zákazníka SPRÁVNĚ vybrat. Je
+                                                důležité opakovat, že osobní zkušenost je nejvíc. Výběr tady mají, že?
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-item">
+                                        <h3 class="deep-purple">Tiskoviny</h3>
+                                        <hr class="deep-purple">
+                                        <div class="portfolio-paragraph">
+                                            <a class="portfolio-link docs" data-src="assets\\portfolio\\Stepper_MQ.pdf">
+                                                <img src="./assets/textIcon.svg" alt=""
+                                                    class="portfolio-link-icon docs">
+                                                <p class="icon-link open">
+                                                    open
+                                                </p>
+                                                {{!-- assets\\portfolio\\stepper_maketa.jpg" --}}
+                                                {{!-- assets\\portfolio\\revolut_maketa.jpg" --}}
+                                            </a>
+                                            <p class="deep-purple-a">
+                                                <b>Pars Komponenty</b> Produktové tiskové materiály ve třech mutacích,
+                                                které vypovídají o vývoji i realizacích slouží pro zahraniční obchodní
+                                                jednání a prezentaci na mezinárodních veletrzích. Vše v rámci Corporate
+                                                Identity.
+                                            </p>
+                                        </div>
+                                        <img src="./assets/portfolio/stepper_maketa.webp" alt="Maketa brozury"
+                                            class="portfolio-image">
+                                    </div>
+                                    <div class="portfolio-item">
+                                        <h3 class="deep-purple">Polepy fiermních vozů</h3>
+                                        <hr class="deep-purple">
+                                        <div class="portfolio-paragraph">
+                                            <a class="portfolio-link image" data-src="./assets/portfolio/polep.jpg">
+                                                <img src="./assets/imageIcon.svg" alt=""
+                                                    class="portfolio-link-icon image">
+                                                <p class="icon-link open">
+                                                    open
+                                                </p>
+                                            </a>
+                                            <p class="deep-purple-a">
+                                                Černý pracant <b>Bazaru lesní techniky</b> se prý povedl…Líbí se a je ho
+                                                vidět.
+                                                Je správé, když firma využije veškeré dostupné nosice pro prezentaci
+                                                svého brandu.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            {{!-- --}}
+                            {{!-- Eventy --}}
+                            {{!-- --}}
+
+                            <div class="swiper-slide carousel-slide slide-2">
+                                <h2 class="light-blue">Eventy</h2>
+                                <!-- Wide list on the top, spanning the whole grid containing a list of possible products -->
+                                <div class="list">
+                                    <p class=""> Firemní family day <span class="bullet">•</span> konference <span
+                                            class="bullet">•</span> slavnostní recepce <span class="bullet">•</span>
+                                        výročí <span class="bullet">•</span> otevření či znovuotevření í pobočky <span
+                                            class="bullet">•</span> prezentace nového produktu <span
+                                            class="bullet">•</span> společenská akce <span class="bullet">•</span> team
+                                        building <span class="bullet">•</span> hudební produkce včetně suportu <span
+                                            class="bullet">•</span> hudební vystoupení
+                                    </p>
+                                </div>
+                                {{!-- <img src="" alt="" class="wide-photo"> --}}
+                                <!-- Main text paragraph about the specific media -->
+                                <div class="main-text-wrapper light-blue">
+                                    <img src="./assets/Eventy.svg" alt="Event icon" class="big-icon">
+                                    <p class="main-text">
+                                        Doba virová zastavila veškerá setkávání, prezentace, akce. A potvrdilo se, jak
+                                        všem chybí.
+                                        <b>Ani nejlepší online přenosy zkrátka nezajistí to pravé prožívání, emoce,
+                                            zážitky a sdílení.</b>
+                                        Pokud Vás čeká firemní událost a potřebujete ji zorganizovat komplexně nebo jen
+                                        částečně doplnit, jsem k dispozici.
+                                    </p>
+                                </div>
+                                <!-- Portfolio -->
+                                <div class="second-portfolio portfolio">
+
+                                </div>
+                            </div>
+
+
+
+                            {{!-- --}}
+                            {{!-- Reklamni predmety --}}
+                            {{!-- --}}
+
+                            <div class="swiper-slide carousel-slide slide-3">
+                                <h2 class="pink">Reklamní předměty</h2>
+                                <!-- Wide list on the top, spanning the whole grid containing a list of possible products -->
+                                <div class="list">
+                                    <p class="">
+                                    </p>
+                                </div>
+                                {{!-- <img src="./images/8287c71358987061222ebdbbd153c2f4.jpg" alt=""
+                                    class="wide-photo"> --}}
+                                <!-- Main text paragraph about the specific media -->
+                                <div class="main-text-wrapper pink">
+                                    <img src="./assets/Path 1.svg" alt="Event icon" class="big-icon">
+                                    <p class="main-text">
+                                        Dárky pro obchodní partnery, zákazníky, zaměstnance. Základním kritériem výběru
+                                        je užitnost. Pokud vyberete správně, dostanete svůj brand do rodin, dokonce v
+                                        téměř 40 % případech,
+                                        až na dva roky. Znáte jiný způsob, jak toho dosáhnout? Abychom se trefili a
+                                        připravili opravdu cílenou nabídku, <b>je důležité ujasnit si, pro koho je co
+                                            určeno.</b> Zohlednit segment podnikání je dobré, ale ne nutně vždy a za
+                                        každou cenu.
+
+                                    </p>
+                                    <p class="main-text">
+                                        <b>A potisk? Většinou platí méně je více.</b> Pak stoupá i užitnost a
+                                        střízlivější potisk udělá často větší efekt. Vše je individuální. Po zvážení
+                                        konkrétní nabídky budete mít snazší rozhodování.
+                                    </p>
+                                </div>
+                                <!-- Portfolio -->
+                                <div class="second-portfolio portfolio">
+                                    <div class="portfolio-item">
+                                        <h3 class="pink">Bazar Lesní Techniky</h3>
+                                        <hr class="pink">
+                                    </div>
+                                    <div class="portfolio-item">
+                                        <h3 class="pink">Reklamní předměty</h3>
+                                        <hr class="pink">
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
+
                     </div>
+                </div>
+                <div class="hexagon-controls hexagon-card-row-wrapper dark-text">
+                    {{#each mediaCategoriesControls}}
+                    <a href="#mediaInfo"
+                        class="hexagon-card carousel-control carousel-control-button-{{@index}} {{#if this.first}} selected {{/if}}">
+                        <img class="" src="{{this.img}}" alt="radio">
+                        <div class="text-wrapper">
+                            <h3 class="{{{this.color}}}">{{{this.title}}} </h3>
+                        </div>
+                    </a>
+                    {{/each}}
                 </div>
 
             </section>
-
-
             <section class="hexagon-background hexagon-background-text-parent kontakt dark-text" id="kontakt">
                 <div class="logo-wrapper">
                     <img src="./assets/Logo.svg" alt="Element Communications">
                 </div>
                 <div class="contact-wrapper">
                     <h2>Kontakt</h2>
-                    <h3>Eva Loskotová</h2>
-                        <ul>
-                            <li> <a href="tel:+420777777777">+420 777 777 777</a><img src="./assets/icon_phone.svg"
-                                    alt="phone icon" class="phone-icon"></li>
-                            <li> <a href="mailto:email.email@email.com">email.email@email.com</a> <span
-                                    class="email-icon">@</span>
-                            </li>
-                            <!-- <li> email.email@email.com</li> -->
-                        </ul>
+                    <h3>Eva Loskotová</h3>
+                    <ul>
+                        <li> <a href="tel:+420776003455">+420 776 003 455</a><img src="./assets/icon_phone.svg"
+                                alt="phone icon" class="phone-icon"></li>
+                        <li> <a href="mailto:loskotovae@gmail.com">loskotovae@gmail.com</a> <span
+                                class="email-icon">@</span>
+                        </li>
+                        <!-- <li> email.email@email.com</li> -->
+                    </ul>
                 </div>
             </section>
         </main>
     </div>
+
     <div class="navigation">
         <div class="navigation-container">
             <img class="sm logo" src="./assets/Logo.svg" alt="Element Communications">
@@ -253,16 +1039,16 @@
             </button>
             <div class="navigation-wrapper">
                 <a href="#paralaxTop" class="selected">
-                    <div class="hexagon-icon"></div> Úvod
+                    <div class="hexagon-icon"></div> <span>Úvod</span>
                 </a>
                 <a href="#mainText">
-                    <div class="hexagon-icon"></div> Projektové řízení
+                    <div class="hexagon-icon"></div> <span>Projektové řízení</span>
                 </a>
                 <a href="#mediaInfo">
-                    <div class="hexagon-icon"></div> Portfolio
+                    <div class="hexagon-icon"></div> <span>Portfolio</span>
                 </a>
                 <a href="#kontakt">
-                    <div class="hexagon-icon"></div> Kontakt
+                    <div class="hexagon-icon"></div> <span>Kontakt</span>
                 </a>
             </div>
         </div>

@@ -1,15 +1,25 @@
+
+
 .navigation {
-    @media screen and (min-width: 9001px) {
+    @media screen and (min-width: 901px) {
         position: fixed;
         z-index: 5;
-        left: 2vw;
-        top: 50vh;
+        top: 0;
         // margin-top: -50%;
         // height: 100vh;
         display: block;
+        background: none;
+        visibility: collapse;
     }
-
     .navigation-wrapper {
+        padding-left: 2vw;
+        height: 100vh;
+        padding-top: 50vh;
+        background: none;
+
+        transition: background 0.2s ease-in-out, translate 0.2s ease-in-out;
+        visibility: collapse;
+
         margin-top: -30%;
         a {
             font-family: "Poppins", sans-serif !important;
@@ -25,27 +35,43 @@
             flex-direction: row;
             align-items: center;
             justify-content: flex-start;
-            gap: 0;
+            gap: 0.5em;
             text-align: left;
+            span {
+                transform: translateX(-100px);
+                transition: transform 0.2s ease-in-out, translate 0.2s ease-in-out;
+            }
         }
         a + a {
             margin-top: 0.5em;
         }
         .hexagon-icon {
-            width: 10px;
-            // aspect-ratio: 1/1;
-            height: 10px;
+            width: 20px;
+            height: 20 * 0.8660254px;
             margin: 0.5vw;
             background-image: url("../assets/smallhex.svg");
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
+            visibility: visible;
+            // z-index: 5;
         }
         a.selected .hexagon-icon {
             background-image: url("../assets/smallhex_filled.svg");
         }
+        &.hovered {
+            // z-index: 5;
+            visibility: visible;
+            a {
+            }
+            transform: translateX(0);
+            background: linear-gradient(to right, #000000a6, transparent);
+            span {
+                transform: translateX(0);
+            }
+        }
     }
-    @media screen and (max-width: 9000px) {
+    @media screen and (max-width: 900px) {
         display: none; //block;
         position: absolute;
         top: 0;
@@ -104,16 +130,17 @@
 
 .sm {
     display: none;
-    @media screen and (max-width: 9000px) {
+    @media screen and (max-width: 900px) {
         display: block;
     }
 }
 
 .navigation-sm {
     display: none;
-    @media screen and (max-width: 9000px) {
+    @media screen and (max-width: 900px) {
         display: block;
     }
+    display: none; //FIXME Navigation is currently hidden because it's broken
     position: fixed;
     width: 100vw;
     // box-sizing: border-box;
@@ -159,7 +186,7 @@
 
 .close-navigation {
     display: none;
-    @media screen and (max-width: 9000px) {
+    @media screen and (max-width: 900px) {
         display: block;
     }
 }
