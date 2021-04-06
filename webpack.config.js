@@ -1,15 +1,19 @@
-const HandlebarsPlugin = require('handlebars-webpack-plugin');
+// const HandlebarsPlugin = require('handlebars-webpack-plugin');
 const path = require('path');
 const Handlebars = require('handlebars');
 const values = require(path.resolve(__dirname, 'data.js'));
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyPlugin = require("copy-webpack-plugin");
+const PurgecssPlugin = require('purgecss-webpack-plugin')
+const glob = require('glob');
+// const CopyPlugin = require("copy-webpack-plugin");
 
 
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const { from } = require('webpack-sources/lib/CompatSource');
+// const ExtractTextPlugin = require("extract-text-webpack-plugin");
+// const { from } = require('webpack-sources/lib/CompatSource');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const PATHS = {
+    src: path.join(__dirname, 'src')
+}
 
 module.exports = {
     entry: [
@@ -43,6 +47,9 @@ module.exports = {
             template: 'index.hbs',
             publicPath: '.',
         }),
+        new PurgecssPlugin({
+            paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
+        }),
     ],
     module: {
         rules: [
@@ -69,7 +76,7 @@ module.exports = {
                                                 // console.log(attributes)
                                                 if (!attributes.class) return false
                                                 return (attributes.class.includes('image') || attributes.class.includes('doc'))
-                                          }
+                                            }
                                         },
                                     ]
                                 }

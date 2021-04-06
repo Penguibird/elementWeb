@@ -207,9 +207,9 @@
     .b2_text {
         position: absolute;
         top: 585px + $b2-offset;
-        @include positionLeftSM(365, 153);
+        @include positionLeftSM(350, 185);
         p {
-            font-size: 17px !important;
+            font-size: 14px !important;
         }
     }
 

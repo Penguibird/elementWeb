@@ -1,14 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="32.001" height="71" viewBox="0 0 32.001 71">
-	<defs>
-		<style>
-			.a {
-				fill: rgba(0, 0, 0, 0);
-				stroke: #fff;
-				stroke-linecap: round;
-				stroke-linejoin: round;
-				stroke-width: 5px;
-			}
-		</style>
-	</defs>
-	<path class="a" d="M-356-5306l-27-33,27,33-27,33Z" />
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="19.185" height="46.185" viewBox="0 0 19.185 46.185"><g transform="translate(-1544.408 -642.408)"><line y1="21" x2="15" transform="translate(1546.5 665.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/><line x2="15" y2="21" transform="translate(1546.5 644.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/></g></svg>

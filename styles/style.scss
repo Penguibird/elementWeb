@@ -18,6 +18,12 @@ $pink: #db2689;
 
 // @import "../bootstrap/_carousel.scss";
 
+.display-large {
+    @media screen and (max-width: 675px) {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 675px) {
     br {
         display: none !important;
@@ -73,7 +79,6 @@ a {
     text-decoration: none !important;
 }
 
-
 $text-shadow: 2.5px 2.5px 7px #5252525b;
 
 .light-blue {
@@ -109,19 +114,22 @@ $text-shadow: 2.5px 2.5px 7px #5252525b;
     }
 }
 .light-blue-a {
-    a,b {
+    a,
+    b {
         color: $light-blue !important;
     }
 }
 
 .deep-purple-a {
-    a,b {
+    a,
+    b {
         color: $deep-purple !important;
     }
 }
 
 .pink-a {
-    a,b {
+    a,
+    b {
         color: $pink !important;
     }
 }
@@ -234,13 +242,17 @@ li {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    gap: 4em;
+    & > * + * {
+        margin-top: 4em;
+    }
     @media screen and (max-width: 675px) {
-        gap: 2em;
+        & > * + * {
+            margin-top: 2em;
+        }
     }
 
     padding-top: 1em;
-    padding-bottom: 3em;
+    // padding-bottom: 3em;
 
     h2,
     p {
@@ -265,10 +277,10 @@ li {
             align-items: center;
             justify-content: space-around;
             padding: 0.5em;
-            gap: 2em;
-            @media screen and (max-width: 675px) {
-                gap: 1em;
+            & > * + * {
+                padding-top: 2em;
             }
+
             p.first {
                 grid-column: 3/4;
             }

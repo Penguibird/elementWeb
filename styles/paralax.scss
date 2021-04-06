@@ -17,17 +17,17 @@ $paralax-section-height: 2117px; //! DIRTY
     background-repeat: no-repeat;
 }
 
-.paralax-group {
-    // fix for mac or some shit like that
-    // margin-left: calc(100% - 100vw);
-    // margin-right: calc(100% - 100vw);
-    // padding-left: calc(100vw - 100%);
-    // padding-right: calc(100vw - 100%);
+// .paralax-group {
+//     // fix for mac or some shit like that
+//     // margin-left: calc(100% - 100vw);
+//     // margin-right: calc(100% - 100vw);
+//     // padding-left: calc(100vw - 100%);
+//     // padding-right: calc(100vw - 100%);
 
-    position: relative;
-    // height: $paralax-section-height;
-    transform-style: preserve-3d;
-}
+//     position: relative;
+//     // height: $paralax-section-height;
+//     transform-style: preserve-3d;
+// }
 
 .paralax-layer {
     width: 100%;

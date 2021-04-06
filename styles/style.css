@@ -8,11 +8,6 @@
   background-repeat: no-repeat;
 }
 
-.paralax-group {
-  position: relative;
-  transform-style: preserve-3d;
-}
-
 .paralax-layer {
   width: 100%;
   position: absolute;
@@ -378,11 +373,11 @@
   .b2_text {
     position: absolute;
     top: 525px;
-    left: calc(69.5275590551% - 53.55px);
-    width: 107.1px;
+    left: calc(69.6850393701% - 64.75px);
+    width: 129.5px;
   }
   .b2_text p {
-    font-size: 17px !important;
+    font-size: 14px !important;
   }
 
   .b3_main {
@@ -638,92 +633,190 @@ section.kontakt {
   background-image: url("../assets/hex_background_1920.png");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 170%;
+  background-size: 220%;
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-end;
-  gap: 0.2em;
-  margin-top: 4em;
-  padding: 4em;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
-section.kontakt .logo-wrapper {
+section.kontakt *:not(h2) {
+  color: #17acc4 !important;
+}
+@media screen and (min-width: 901px) {
+  section.kontakt {
+    margin-top: 4em;
+  }
+}
+
+.contact-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 8em 0;
+  padding-top: 0;
+}
+.contact-container > * + * {
+  padding-top: 0.2em;
+}
+.contact-container .logo-wrapper {
   padding-left: 8vw;
   padding-bottom: 1vw;
   max-width: 300px;
   width: 25vw;
+  display: none;
 }
-section.kontakt .logo-wrapper img {
+.contact-container .logo-wrapper img {
   width: 100%;
   height: auto;
 }
-section.kontakt .contact-wrapper {
+@media screen and (min-width: 901px) {
+  .contact-container {
+    padding-top: 2em;
+    align-items: flex-start;
+    flex-direction: row;
+    background-size: 170%;
+    padding-right: 20vw;
+  }
+  .contact-container .logo-wrapper {
+    display: block;
+  }
+}
+.contact-container .contact-wrapper {
   padding-top: 13vw;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: space-around;
   width: auto;
-  gap: 0.5em;
 }
 @media screen and (min-width: 1200px) {
-  section.kontakt .contact-wrapper {
+  .contact-container .contact-wrapper {
     padding-top: 156px;
   }
 }
-section.kontakt h2,
-section.kontakt h3 {
+.contact-container .contact-wrapper > * + * {
+  padding-top: 0.5em;
+}
+@media screen and (max-width: 900px) {
+  .contact-container .contact-wrapper {
+    padding-right: 3.5em;
+  }
+}
+.contact-container h2,
+.contact-container h3 {
   font-weight: 700;
   font-size: 30px;
 }
-section.kontakt h2 {
-  font-size: 40px;
-  color: white;
-  display: none;
-}
-section.kontakt h3 {
+.contact-container h3 {
   font-size: 30px;
   color: #f04fa0;
 }
-section.kontakt p {
+.contact-container p {
   max-width: 60ch;
   text-align: right;
 }
-section.kontakt ul {
+.contact-container ul {
+  margin-right: -39px;
   text-align: right;
 }
-section.kontakt ul > * + * {
+.contact-container ul > * + * {
   padding-top: 0.7em;
 }
-section.kontakt li {
+.contact-container li {
   font-weight: 500;
   font-size: 22px;
   color: #5ab2ca;
 }
-section.kontakt li::marker {
-  content: "";
-  display: none;
+.contact-container ul {
+  list-style: none;
 }
-section.kontakt a {
+.contact-container a,
+.contact-container p {
   text-decoration: none;
   color: inherit;
 }
-section.kontakt .phone-icon {
+.contact-container span {
+  display: inline;
+}
+.contact-container .phone-icon {
   height: 1.6em;
   top: 0.3em;
   margin-left: 0.2em;
+  display: inline;
+  filter: brightness(0.85);
 }
-section.kontakt .email-icon {
+.contact-container .email-icon {
   font-size: 1.5em;
   top: 0.1em;
   margin-right: 0.1em;
   margin-left: 0.1em;
 }
-section.kontakt .phone-icon,
-section.kontakt .email-icon {
+.contact-container .phone-icon,
+.contact-container .email-icon {
   color: #5ab2ca;
   font-weight: 700;
   position: relative;
+}
+.contact-container .ic-icon,
+.contact-container .dic-icon {
+  width: 30px;
+  font-weight: 900;
+  text-align: center;
+  font-size: 1.1em;
+  margin-right: -0.3ch;
+  margin-left: 0.25ch;
+}
+.contact-container .ic-icon {
+  font-size: 1.2em;
+  letter-spacing: 0.1ch;
+  margin-right: 0;
+  margin-left: 0.4ch;
+}
+.contact-container .address {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+}
+.contact-container .address .address-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.contact-container .address .address-wrapper > * + * {
+  padding-top: 0.3em;
+}
+.contact-container .address .address-icon {
+  margin-left: 0.3em;
+  height: 1.5em;
+}
+
+.contact-phrase {
+  padding-top: 2em;
+  font-size: 28px;
+  letter-spacing: 0.2px;
+}
+@media screen and (min-width: 900px) {
+  .contact-phrase {
+    align-self: flex-end;
+    margin-right: 9vw;
+  }
+}
+
+footer {
+  align-self: center;
+  justify-self: flex-end;
+  width: 100%;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5em;
+}
+footer p {
+  text-align: center;
 }
 
 .media-info {
@@ -731,7 +824,6 @@ section.kontakt .email-icon {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  gap: 0;
 }
 
 .swiper-slide {
@@ -764,8 +856,11 @@ section.kontakt .email-icon {
 
 .carousel-control-next,
 .carousel-control-prev {
-  height: 100%;
-  position: relative;
+  height: max-content;
+  position: sticky;
+  top: 25vh;
+  margin-top: 30vh;
+  bottom: 40vw;
   z-index: 5;
   width: 5vw;
   background: none;
@@ -777,7 +872,16 @@ section.kontakt .email-icon {
 .carousel-control-prev img.icon {
   transition: translate 0.2s ease-in-out;
 }
+@media screen and (max-width: 900px) {
+  .carousel-control-next,
+.carousel-control-prev {
+    display: none;
+  }
+}
 
+.carousel-control-next {
+  right: 5vw;
+}
 .carousel-control-next:hover img.icon {
   transform: translateX(5px);
 }
@@ -785,6 +889,9 @@ section.kontakt .email-icon {
   transform: translateX(15px);
 }
 
+.carousel-control-prev {
+  left: 5vw;
+}
 .carousel-control-prev:hover img.icon {
   transform: rotate(180deg) translateX(5px);
 }
@@ -810,25 +917,29 @@ section.kontakt .email-icon {
 
 .carousel-slide {
   box-sizing: border-box;
-  padding-top: 6em;
-  gap: 2em;
+  padding-top: 8em;
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: 13vw 60vw 13vw;
 }
 @media screen and (min-width: 901px) {
   .carousel-slide {
-    padding-bottom: 3em;
+    padding-bottom: 8em;
   }
 }
 @media screen and (max-width: 900px) {
   .carousel-slide {
-    padding: 1em;
+    padding: 3em;
   }
+}
+.carousel-slide > * + * {
+  margin-top: 3em;
 }
 @media screen and (max-width: 675px) {
   .carousel-slide {
     gap: 0;
+    padding: 2em 0.5vw;
+    padding-left: 1.2vw;
   }
 }
 .carousel-slide h2::first-letter {
@@ -856,7 +967,10 @@ section.kontakt .email-icon {
   font-size: 25px;
 }
 .carousel-slide * + h3 {
-  margin-top: 1.2em;
+  margin-top: 3em;
+}
+.carousel-slide img + h3 {
+  margin-top: 1em;
 }
 .carousel-slide p {
   font-size: 19px;
@@ -869,19 +983,37 @@ section.kontakt .email-icon {
   }
 }
 .carousel-slide * + p {
-  margin-top: 0.3em;
+  margin-top: 1em;
 }
 .carousel-slide .wide-photo {
-  width: 100%;
   grid-column: 1/-1;
-  height: 140px;
+  place-self: center;
+  width: auto;
+  height: 220px;
+  max-width: 90vw;
   object-fit: cover;
   object-position: center;
   box-sizing: content-box;
-  margin: 1em;
+  align-items: center;
+}
+.carousel-slide .wide-photo.trad-media {
+  height: unset;
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+@media screen and (max-width: 900px) {
+  .carousel-slide .wide-photo {
+    margin: 0.3em;
+    margin-top: 2em;
+    width: 90vw;
+    height: auto;
+  }
+}
+.carousel-slide .portfolio-image.copywriting-boure-strun {
+  margin-top: -40px;
 }
 .carousel-slide .main-text-wrapper {
-  padding-top: 5em;
+  padding-top: 1em;
   grid-column: 2/span 1;
   display: grid;
   grid-template-columns: 1fr 20vw;
@@ -926,14 +1058,20 @@ section.kontakt .email-icon {
     display: none;
   }
 }
+.carousel-slide .main-text-wrapper.trad-media {
+  padding-top: 0;
+}
 .carousel-slide .list {
   padding-top: 0.5em;
+  margin-top: 1.5em;
   grid-column: 1/-1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  gap: 0.5em;
+}
+.carousel-slide .list > * + * {
+  padding-top: 1em;
 }
 .carousel-slide .list h3 {
   align-self: auto;
@@ -962,10 +1100,15 @@ section.kontakt .email-icon {
 }
 
 .hexagon-controls {
+  grid-column: 1/-1;
   max-width: 1400px;
   width: 90vw;
   align-self: center;
-  gap: 3vw;
+  row-gap: 3vw;
+  padding-top: 3em;
+}
+.hexagon-controls > * + * {
+  margin-left: 3vw;
 }
 @media screen and (max-width: 900px) {
   .hexagon-controls {
@@ -974,7 +1117,7 @@ section.kontakt .email-icon {
     grid-template-rows: 1fr 1fr;
     justify-items: center;
     width: unset;
-    font-size: 14px !important;
+    font-size: 12px !important;
   }
   .hexagon-controls .hexagon-card {
     width: 120px;
@@ -999,6 +1142,17 @@ section.kontakt .email-icon {
 @media screen and (max-width: 675px) {
   .hexagon-controls {
     margin-bottom: 2em;
+    row-gap: 3vw;
+    padding-right: 1vw;
+    padding-left: 1vw;
+    grid-template-columns: repeat(3, 105px);
+  }
+  .hexagon-controls > * + * {
+    margin-left: 3vw;
+  }
+  .hexagon-controls .hexagon-card {
+    width: 105px;
+    height: 90.932667px;
   }
 }
 
@@ -1011,8 +1165,11 @@ section.kontakt .email-icon {
   flex-direction: column;
   align-items: center;
   justify-content: stretch;
-  gap: 1em;
+  box-sizing: border-box;
   padding: 1em;
+}
+.hexagon-card > * + * {
+  margin-top: 1em;
 }
 .hexagon-card img {
   flex: 1;
@@ -1032,7 +1189,6 @@ section.kontakt .email-icon {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0;
 }
 @media screen and (max-width: 675px) {
   .hexagon-card .text-wrapper {
@@ -1069,6 +1225,11 @@ section.kontakt .email-icon {
   visibility: collapse;
   margin-top: -30%;
 }
+@media screen and (max-width: 900px) {
+  .navigation .navigation-wrapper {
+    visibility: visible;
+  }
+}
 .navigation .navigation-wrapper a {
   font-family: "Poppins", sans-serif !important;
   font-weight: 400;
@@ -1082,12 +1243,16 @@ section.kontakt .email-icon {
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: 0.5em;
   text-align: left;
 }
-.navigation .navigation-wrapper a span {
-  transform: translateX(-100px);
-  transition: transform 0.2s ease-in-out, translate 0.2s ease-in-out;
+.navigation .navigation-wrapper a > * + * {
+  margin-left: 0.5em;
+}
+@media screen and (min-width: 901px) {
+  .navigation .navigation-wrapper a span {
+    transform: translateX(-100px);
+    transition: transform 0.2s ease-in-out, translate 0.2s ease-in-out;
+  }
 }
 .navigation .navigation-wrapper a + a {
   margin-top: 0.5em;
@@ -1136,8 +1301,10 @@ section.kontakt .email-icon {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    gap: 1em;
     width: 100%;
+  }
+  .navigation .navigation-container > * + * {
+    padding-top: 1em;
   }
   .navigation .navigation-overlay {
     height: 100vh;
@@ -1244,25 +1411,35 @@ section.kontakt .email-icon {
 }
 
 .portfolio {
+  place-self: center;
   grid-column: 2/span 1;
-  margin-top: 2em;
+  margin-top: 5em;
   max-width: 1100px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: stretch;
-  gap: 5em;
   flex-wrap: wrap;
+  gap: 8em;
 }
 @media screen and (max-width: 675px) {
   .portfolio {
     grid-column: 1/-1;
   }
 }
+.portfolio.eventy {
+  flex-direction: column;
+  align-items: center;
+}
 @media screen and (max-width: 900px) {
   .portfolio {
     flex-direction: column;
     align-items: center;
+    flex-wrap: nowrap;
+    gap: 0;
+  }
+  .portfolio > * + * {
+    padding-top: 2em;
   }
 }
 
@@ -1272,32 +1449,48 @@ section.kontakt .email-icon {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 2em;
+}
+.portfolio-item > * + * {
+  margin-top: 4em;
 }
 .portfolio-item h3 {
   align-self: center;
 }
 .portfolio-item hr {
+  margin-top: 1.5em;
   align-self: center;
   width: 108%;
 }
 .portfolio-item div.portfolio-paragraph,
-.portfolio-item img.portfolio-image {
+.portfolio-item .portfolio-image {
   width: 100%;
 }
 .portfolio-item p {
   font-size: 18px;
   line-height: 26px;
 }
-.portfolio-item img.portfolio-image {
+.portfolio-item .portfolio-image {
   height: auto;
   border-radius: 3px;
+}
+@media screen and (max-width: 900px) {
+  .portfolio-item .portfolio-image.cropped {
+    height: 120px;
+    object-fit: cover;
+  }
+}
+.portfolio-item hr + .portfolio-paragraph {
+  margin-top: 2em;
 }
 .portfolio-item .portfolio-paragraph {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: 0.5em;
+  gap: 2em;
+  column-gap: 2em;
+}
+.portfolio-item .portfolio-paragraph p {
+  margin-top: 0;
 }
 .portfolio-item .portfolio-paragraph .portfolio-link {
   flex-shrink: 0;
@@ -1337,8 +1530,10 @@ section.kontakt .email-icon {
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: 1.5em;
   padding: 2em;
+}
+.portfolio-image-wrapper > * + * {
+  margin-left: 1.5em;
 }
 .portfolio-image-wrapper img {
   width: 100%;
@@ -1354,9 +1549,45 @@ section.kontakt .email-icon {
 .portfolio-image-wrapper.digiMedia-photo {
   flex: 2 2 40%;
 }
+@media screen and (max-width: 900px) {
+  .portfolio-image-wrapper {
+    padding: 0;
+  }
+}
+
+.portfolio.predmety {
+  gap: 0;
+  align-items: stretch;
+}
+.portfolio.predmety .portfolio-image-wrapper {
+  padding: 1em;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-image-wrapper.predmety {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: stretch;
+}
+.portfolio-image-wrapper.predmety > * + * {
+  margin-left: 2em;
+}
+.portfolio-image-wrapper.predmety > .img-wrapper {
+  flex: 1 2 30%;
+}
+.portfolio-image-wrapper.predmety img {
+  width: 100%;
+  height: auto;
+}
 
 .overlay {
   position: fixed;
+  overflow-y: scroll;
   top: 0;
   right: 0;
   left: 0;
@@ -1436,6 +1667,12 @@ section.kontakt .email-icon {
 }
 #overlay2 .close-button-2 {
   grid-area: cross;
+}
+
+@media screen and (max-width: 675px) {
+  .display-large {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 675px) {
@@ -1525,15 +1762,18 @@ a {
   color: white;
 }
 
-.light-blue-a a, .light-blue-a b {
+.light-blue-a a,
+.light-blue-a b {
   color: #1bcae6 !important;
 }
 
-.deep-purple-a a, .deep-purple-a b {
+.deep-purple-a a,
+.deep-purple-a b {
   color: #9a57c1 !important;
 }
 
-.pink-a a, .pink-a b {
+.pink-a a,
+.pink-a b {
   color: #db2689 !important;
 }
 
@@ -1635,13 +1875,14 @@ li {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  gap: 4em;
   padding-top: 1em;
-  padding-bottom: 3em;
+}
+.section-main-text > * + * {
+  margin-top: 4em;
 }
 @media screen and (max-width: 675px) {
-  .section-main-text {
-    gap: 2em;
+  .section-main-text > * + * {
+    margin-top: 2em;
   }
 }
 .section-main-text h2,
@@ -1668,20 +1909,13 @@ li {
     align-items: center;
     justify-content: space-around;
     padding: 0.5em;
-    gap: 2em;
   }
-}
-@media screen and (max-width: 1200px) and (max-width: 675px) {
-  .section-main-text .heading-wrapper {
-    gap: 1em;
+  .section-main-text .heading-wrapper > * + * {
+    padding-top: 2em;
   }
-}
-@media screen and (max-width: 1200px) {
   .section-main-text .heading-wrapper p.first {
     grid-column: 3/4;
   }
-}
-@media screen and (max-width: 1200px) {
   .section-main-text .heading-wrapper h1 {
     grid-column: 2/-2;
   }

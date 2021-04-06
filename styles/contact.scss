@@ -2,36 +2,69 @@ section.kontakt {
     background-image: url("../assets/hex_background_1920.png");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 170%; //FIXME should crop image to this, might be loading way too much
+    background-size: 220%; //FIXME should crop image to this, might be loading way too much
+
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    *:not(h2) {
+        color: #17acc4 !important;
+    }
+    @media screen and (min-width: 901px) {
+        margin-top: 4em;
+    }
+}
+
+.contact-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     justify-content: flex-end;
-    gap: 0.2em;
-    margin-top: 4em;
-    padding: 4em;
+    & > * + * {
+        padding-top: 0.2em;
+    }
+    padding: 8em 0;
     .logo-wrapper {
         padding-left: 8vw;
         padding-bottom: 1vw;
         max-width: 300px;
         width: 25vw;
+        display: none;
         img {
             width: 100%;
             height: auto;
+        }
+    }
+    padding-top: 0;
+    @media screen and (min-width: 901px) {
+        padding-top: 2em;
+
+        align-items: flex-start;
+        flex-direction: row;
+        background-size: 170%; //FIXME should crop image to this, might be loading way too much
+        padding-right: 20vw;
+        .logo-wrapper {
+            display: block;
         }
     }
     .contact-wrapper {
         padding-top: 13vw;
         @media screen and (min-width: 1200px) {
             padding-top: 0.13 * 1200px;
-
         }
         display: flex;
         flex-direction: column;
         align-items: flex-end;
         justify-content: space-around;
         width: auto;
-        gap: 0.5em;
+        & > * + * {
+            padding-top: 0.5em;
+        }
+        @media screen and (max-width: 900px) {
+            padding-right: 3.5em;
+        }
     }
 
     h2,
@@ -39,11 +72,7 @@ section.kontakt {
         font-weight: 700;
         font-size: 30px;
     }
-    h2 {
-        font-size: 40px;
-        color: white;
-        display: none; // FIXME Display none at contact
-    }
+
     h3 {
         font-size: 30px;
         color: #f04fa0;
@@ -54,6 +83,7 @@ section.kontakt {
         text-align: right;
     }
     ul {
+        margin-right: -39px;
         text-align: right;
         & > * + * {
             padding-top: 0.7em;
@@ -64,18 +94,25 @@ section.kontakt {
         font-size: 22px;
         color: #5ab2ca;
     }
-    li::marker {
-        content: "";
-        display: none;
+
+    ul {
+        list-style: none;
     }
-    a {
+
+    a,
+    p {
         text-decoration: none;
         color: inherit;
+    }
+    span {
+        display: inline;
     }
     .phone-icon {
         height: 1.6em;
         top: 0.3em;
         margin-left: 0.2em;
+        display: inline;
+        filter: brightness(0.85);
     }
     .email-icon {
         font-size: 1.5em;
@@ -89,5 +126,67 @@ section.kontakt {
         // filter: invert(0.35);
         font-weight: 700;
         position: relative;
+    }
+    .ic-icon,
+    .dic-icon {
+        width: 30px;
+        font-weight: 900;
+        text-align: center;
+        font-size: 1.1em;
+        margin-right: -0.3ch;
+        margin-left: 0.25ch;
+    }
+    .ic-icon {
+        font-size: 1.2em;
+        letter-spacing: 0.1ch;
+        margin-right: 0;
+        margin-left: 0.4ch;
+    }
+    .address {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: flex-start;
+        // justify-content: space-around;
+        // gap: ;
+        .address-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            & > * + * {
+                padding-top: 0.3em;
+            }
+            // justify-content: space-around;
+            // gap: ;
+        }
+        .address-icon {
+            margin-left: 0.3em;
+            height: 1.5em;
+        }
+    }
+}
+
+.contact-phrase {
+    padding-top: 2em;
+    font-size: 28px;
+    letter-spacing: 0.2px;
+    @media screen and (min-width: 900px) {
+        align-self: flex-end;
+        margin-right: 9vw;
+    }
+}
+
+footer {
+    align-self: center;
+    justify-self: flex-end;
+
+    width: 100%;
+    right: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5em;
+    p {
+        text-align: center;
     }
 }

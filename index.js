@@ -14,10 +14,14 @@ if (isClient) {
 
     const setSelectedControl = (from, to) => {
         selectedSlide = to;
-        let list = document.getElementsByClassName('carousel-control');
-        // console.log(list, list[0], to)
-        list.item(from).classList.remove("selected");
-        list.item(to).classList.add("selected");
+        document.querySelectorAll('.carousel-control').forEach(el => {
+            if (el.classList.contains(`carousel-control-button-${from}`)) {
+                el.classList.remove("selected")
+            }
+            if (el.classList.contains(`carousel-control-button-${to}`)) {
+                el.classList.add("selected")
+            }
+        });
     }
 
     window.onload = () => {
@@ -27,6 +31,7 @@ if (isClient) {
         console.log(vw)
         window.mySwipe = new Swiper('#slider', {
             width: vw * 0.905,
+            autoHeight: true,
             // loop: true,
         });
         window.mySwipe.on('slideChange', e => {
@@ -40,11 +45,9 @@ if (isClient) {
         document.querySelector('.media-info .carousel-control-next').addEventListener('click', e => { window.mySwipe.slideNext() })
         document.querySelector('.media-info .carousel-control-prev').addEventListener('click', e => { window.mySwipe.slidePrev() })
 
-        document.querySelectorAll('.carousel-control').forEach(
-            (el, key) => {
-                el.addEventListener('click', e => flipToSlide(key));
-            }
-        )
+        document.querySelectorAll('.carousel-control').forEach(el => {
+            el.addEventListener('click', e => flipToSlide(el.getAttribute('data-i').toString()));
+        })
 
         document.querySelectorAll('.portfolio-link.music').forEach((el, key) => {
             el.addEventListener('click', e => openMusicPlayer(el.getAttribute('data-src')))
@@ -83,6 +86,7 @@ if (isClient) {
             window.mySwipe = new Swiper('.swiper-container', {
                 initialSlide: selectedSlide,
                 width: vw * 0.905,
+                autoHeight: true,
                 // loop: true,
             });
             window.mySwipe.on('slideChange', e => {
@@ -189,16 +193,17 @@ if (isClient) {
 
 
         document.querySelectorAll('.navigation .hexagon-icon').forEach(el => {
-            el.addEventListener('mouseenter', e=> document.querySelector('.navigation-wrapper').classList.add('hovered'))
+            el.addEventListener('mouseenter', e => document.querySelector('.navigation-wrapper').classList.add('hovered'))
             // el.addEventListener('onmouseover', e=> document.querySelector('.navigation-wrapper').classList.add('hovered'))
         })
-        document.querySelector('.navigation-wrapper').addEventListener('mouseleave', e=> document.querySelector('.navigation-wrapper').classList.remove('hovered'))
+        document.querySelector('.navigation-wrapper').addEventListener('mouseleave', e => document.querySelector('.navigation-wrapper').classList.remove('hovered'))
 
 
 
         window.myPortfolio = new Swiper('.swiper-container#myPortfolio', {
             width: (vw > 1000 ? 900 : 0.80 * vw) * 0.9,
             loop: true,
+            autoHeight: true,
             // preventClicksPropagation: true,
         });
 
