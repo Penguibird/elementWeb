@@ -1974,3 +1974,7 @@ li {
 .section-main-text .text-wrapper p {
   grid-column: 2/3;
 }
+
+.swiper-wrapper {
+  width: 85vw;
+}
