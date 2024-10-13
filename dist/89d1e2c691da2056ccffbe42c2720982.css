@@ -1157,7 +1157,7 @@ footer p {
 }
 
 .hexagon-card {
-  background-image: url(./svg/8a2963c5093f8506f3f6bc473c79a412.svg);
+  background-image: url(./svg/b671e21fa7b6cb0f8b6c22ef88394a7e.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -1261,14 +1261,14 @@ footer p {
   width: 20px;
   height: 17.320508px;
   margin: 0.5vw;
-  background-image: url(./svg/65b404d791faa7ad4a2bda9e7e2e5026.svg);
+  background-image: url(./svg/8e643cf18beae116f7cb57ccb3d4b03a.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   visibility: visible;
 }
 .navigation .navigation-wrapper a.selected .hexagon-icon {
-  background-image: url(./svg/1dadb5bd356991fc3fe99896fd7f593c.svg);
+  background-image: url(./svg/367bf95ba3617f0f9c0c8e9491a8354d.svg);
 }
 .navigation .navigation-wrapper.hovered {
   visibility: visible;
@@ -1977,4 +1977,8 @@ li {
 
 .swiper-wrapper {
   width: 85vw;
+}
+
+.carousel-control-button-5 img {
+  filter: invert(31%) sepia(48%) saturate(6120%) hue-rotate(310deg) brightness(88%) contrast(95%);
 }

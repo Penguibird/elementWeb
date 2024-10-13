@@ -1979,4 +1979,8 @@ li {
   width: 85vw;
 }
 
+.carousel-control-button-5 img {
+  filter: invert(31%) sepia(48%) saturate(6120%) hue-rotate(310deg) brightness(88%) contrast(95%);
+}
+
 /*# sourceMappingURL=style.css.map */

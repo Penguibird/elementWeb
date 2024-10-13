@@ -28,8 +28,8 @@ module.exports = {
             color: 'light-blue',
 
         }, {
-            title: "Reklamní<br />předměty",
-            img: "./assets/Path 1.svg",
+            title: "Kapela<br />NANOVO",
+            img: "./assets/Nanovo.webp",
             color: 'pink',
 
         },
@@ -282,16 +282,17 @@ module.exports = {
 
             ]
         }, {
-            title: 'Reklamní předměty',
+            title: 'Kapela NANOVO',
             color: 'pink',
             mainText: [
                 {
-                    text: `Dárky pro obchodní partnery, zákazníky, zaměstnance. Základním kritériem výběru je užitnost. Pokud vyberete správně, dostanete svůj brand do rodin, dokonce  v téměř 40 % případech, 
-                    až na dva roky. Znáte jiný způsob, jak toho dosáhnout? Abychom se trefili a připravili opravdu cílenou nabídku, <b>je důležité ujasnit si, pro koho je co určeno.</b> Zohlednit segment podnikání je dobré, ale ne nutně vždy a za každou cenu.
-                     `
-                }, {
-                    text: `<b>A potisk? Většinou platí méně je více.</b> Pak stoupá i užitnost a střízlivější potisk udělá často větší efekt. Vše je individuální. Po zvážení konkrétní nabídky budete mít snazší rozhodování.`
-                }
+                    text: `I hudba je komunikační prostředek. A jaký.
+                    Co teprve komunikace v kapele, v týmu, s pořadateli, médii – nekonečný prostor pro stále nové situace a zkušenosti.
+                    Přes občasné svízele je to prostě „lovejob“`,
+                }, 
+                // {
+                //     text: `<b>A potisk? Většinou platí méně je více.</b> Pak stoupá i užitnost a střízlivější potisk udělá často větší efekt. Vše je individuální. Po zvážení konkrétní nabídky budete mít snazší rozhodování.`
+                // }
             ],
             portfolio: [
                 {
@@ -308,11 +309,11 @@ module.exports = {
         }
     ],
     myPortfolio: [
-        "./assets/portfolio/predmety/94192_15_apl (1).jpg",
-        "./assets/portfolio/predmety/AD_diar-2021 (1).jpg",
-        "./assets/portfolio/predmety/cajova-kolekce_apl (1).jpg",
-        "./assets/portfolio/predmety/coko_apl.jpg",
-        "./assets/portfolio/predmety/kalendar-stolni_2021_simulace-listy.jpg",
-        "./assets/portfolio/predmety/STRETCH_apl.jpg",
+        // "./assets/portfolio/predmety/94192_15_apl (1).jpg",
+        // "./assets/portfolio/predmety/AD_diar-2021 (1).jpg",
+        // "./assets/portfolio/predmety/cajova-kolekce_apl (1).jpg",
+        // "./assets/portfolio/predmety/coko_apl.jpg",
+        // "./assets/portfolio/predmety/kalendar-stolni_2021_simulace-listy.jpg",
+        // "./assets/portfolio/predmety/STRETCH_apl.jpg",
     ]
 }
